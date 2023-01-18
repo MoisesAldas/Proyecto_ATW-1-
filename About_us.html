@@ -27,30 +27,23 @@
         });
     });
 
-    $(document).ready(function () {
-        $("h1").mouseover(function () {
-            $(this).css("color", "red");
-            $(this).css("font-size", "50px");
-        }).mouseleave(function () {
-            $(this).css("color", "black");
-            $(this).css("font-size", "30px");
-        });
-    });
 
     //Cambiar color de fondo de la pagina al hacer doble click en el titulo y volver a su estado original al hacer click
     $(document).ready(function () {
-        $("h1.text-center.p-5.fw-bold").mouseover(function () {
-            $(this).css("color", "red");
+        $("h1.text-center.p-5.fw-bold").first().mouseover(function () {
+            $(this).css("color", "#b2e8f9");
             $(this).css("font-size", "50px");
         }).mouseleave(function () {
             $(this).css("color", "black");
             $(this).css("font-size", "30px");
         });
-    });
-    $(document).ready(function () {
+        var originalColor;
         $("h1.text-center.p-5.fw-bold").first().dblclick(function () {
-            $(this).css("background-color", "yellow");
+            originalColor = $(this).css("color");
+            $(this).css("color", "black");
+            $(this).css("background-color", "#b2e8f9");
         }).click(function () {
+            $(this).css("color", originalColor);
             $(this).css("background-color", " #E8E8E8");
         });
     });
@@ -78,6 +71,18 @@
         });
     });
 
+    //Opacidad de las imagenes con click y doble click
+    $(document).ready(function () {
+        $(".img-fluid").click(function () {
+            $(this).animate({
+                opacity: 0.5
+            }, 1000);
+        }).dblclick(function () {
+            $(this).animate({
+                opacity: 1
+            }, 1000);
+        });
+    });
 </script>
 
 <body>
