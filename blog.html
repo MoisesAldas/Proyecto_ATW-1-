@@ -14,30 +14,31 @@
   <link rel="icon" type="image/png" sizes="32x32" href="imagenes/paw-print.ico">
   <style>
     a {
-         text-decoration: none !important;
-     }
-     .myBtn {
-   font-size: 20px;
-   padding: 10px;
-   transition: all 0.3s ease-in-out;
- }
- 
- .grow {
-   transform: scale(1.5);
- }
- 
- .negrita {
-   font-weight: bold;
- }
- 
- #topBtn{
-   background-color: black;
- color: white;
- }
- .dropdown:hover .dropdown-menu {
-     display: block;
-   }
- 
+      text-decoration: none !important;
+    }
+
+    .myBtn {
+      font-size: 20px;
+      padding: 10px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .grow {
+      transform: scale(1.5);
+    }
+
+    .negrita {
+      font-weight: bold;
+    }
+
+    #topBtn {
+      background-color: black;
+      color: white;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
   </style>
   <script>
     $(document).ready(function () {
@@ -109,54 +110,66 @@
     .parte1 {
       text-align: justify;
     }
+
     .info {
       display: none;
+    }
+
+    .contenedor:hover .imagen {
+      -webkit-transform: scale(1.3);
+      transform: scale(1.1);
+    }
+    .contenedor {
+      overflow: hidden;
     }
   </style>
 </head>
 
 <body>
-<!-- Header -->
-<nav class="navbar navbar-expand-lg px-4  " style="background-color:#b2e8f9 ;">
-  <div class="container-fluid">
-    <a class="navbar-brand " href="index.html" > <span class="fs-2 fw-bold" id="myTitle">AdoptME</span> </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-   
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg px-4  " style="background-color:#b2e8f9 ;">
+    <div class="container-fluid">
+      <a class="navbar-brand " href="index.html"> <span class="fs-2 fw-bold" id="myTitle">AdoptME</span> </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" id="opcion1">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="blog.html" id="opcion2">Blog</a>
-            </li>
-          
-            <li class="nav-item">
-              <a class="nav-link active "href="About_us.html" id="opcion3">Sobre nosotros</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="#" id="opcion4" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Mascotas
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="gatos.html">Gatos</a></li>
-                <li><a class="dropdown-item" href="perros.html">Perros</a></li>
-                
-              </ul>
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-           
-            <a href="contact.html"><button type="button" class="btn   fw-semibold myBtn" style="background-color:#b2e8f9 ;border-color: #151515;" id="Contactos">Contacto</button> </a>
-          </form>
-        </div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" id="opcion1">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="blog.html" id="opcion2">Blog</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active " href="About_us.html" id="opcion3">Sobre nosotros</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="opcion4" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Mascotas
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="gatos.html">Gatos</a></li>
+              <li><a class="dropdown-item" href="perros.html">Perros</a></li>
+
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+
+          <a href="contact.html"><button type="button" class="btn   fw-semibold myBtn"
+              style="background-color:#b2e8f9 ;border-color: #151515;" id="Contactos">Contacto</button> </a>
+        </form>
+      </div>
 
 
 
-  </div>
-</nav>
+    </div>
+  </nav>
 
   <!--Body--->
 
@@ -177,9 +190,9 @@
           los perros y gatos abandonados</h2>
         <div class="my-4">
           <div class="text-muted">
-            <i  class="bi bi-calendar3 mx-2 text-info"></i>
+            <i class="bi bi-calendar3 mx-2 text-info"></i>
             Oct 21, 2020 at 12:05 pm
-            <i  class="bi bi-newspaper  mx-2 text-info"></i>
+            <i class="bi bi-newspaper  mx-2 text-info"></i>
             Article
           </div>
         </div>
@@ -188,7 +201,9 @@
           de compañía en nuestro país. Mientras los abandonos no disminuyen, la preocupación es mayor porque, además, la
           adopción no aumenta.
         </p>
-        <img id="perritos" class="img-fluid my-5" src="imagenes/blog1.jpg" alt="perritos">
+        <div class="contenedor">
+          <img  class="img-fluid my-5 imagen" src="imagenes/blog1.jpg" alt="perritos">
+        </div>
         <p class="text-muted ">
           Adoptar o comprar un perro supone asumir una responsabilidad. Cuando estés considerando la posibilidad de
           adoptar un perro y dejar que forme parte de tu vida, debes tener en cuenta que se convertirá en un miembro más
@@ -205,7 +220,9 @@
           sienten la motivación de hacer una “obra de buena fe”. Al final, lo importante es que con tu nuevo compañero
           disfrutarás de muchos momentos de alegría
         </p>
-        <img id="img" class="img-fluid my-5" src="imagenes/blog2.jpg" alt="gatitos">
+        <div class="contenedor">
+          <img class="img-fluid my-5 imagen" src="imagenes/blog2.jpg" alt="gatitos">
+        </div>
         <p id="p3" class="text-muted ">
           Lo mismo pasa en gatos,
           hay muchas razones por las que adoptar un gato, y muchas más también para adoptar un gato mestizo. Porque
@@ -223,13 +240,13 @@
           se vaya acostumbrando a tu compañía y a su nuevo espacio de vida.
 
         </p>
-        <p  class="mx-2 my-5 text-muted">
+        <p class="mx-2 my-5 text-muted">
           ¡Compartir esta publicación!
           <a href="https://www.facebook.com/brandobermello.18?mibextid=LQQJ4d "><i
               class="bi bi-facebook mx-2 text-muted "></i></a>
           <a href="https://mobile.twitter.com/justinbieber"><i class="bi bi-twitter mx-2 text-muted "></i></a>
           <a href="https://www.instagram.com/justinbieber/"><i class="bi bi-instagram mx-2 text-muted"></i></a>
-          <a href="#"><i class="bi bi-google mx-2 text-muted"></i></a>
+          <a href="https://www.google.com/"><i class="bi bi-google mx-2 text-muted"></i></a>
         </p>
       </div>
       <div class="col-lg-6 col-sm-12 align-items-center justify-content-center">
@@ -244,13 +261,11 @@
             protectoras, santuarios, reservas y cualquier evento o actividad relacionada.
           </p>
           <p class="mx-2 my-5 text-muted">
-            <a  href="https://www.facebook.com/brandobermello.18?mibextid=LQQJ4d"><i
+            <a href="https://www.facebook.com/brandobermello.18?mibextid=LQQJ4d"><i
                 class="bi bi-facebook mx-2 text-muted "></i></a>
-            <a  href="https://mobile.twitter.com/justinbieber"><i
-                class="bi bi-twitter mx-2 text-muted "></i></a>
-            <a  href="https://www.instagram.com/justinbieber/"><i
-                class="bi bi-instagram mx-2 text-muted"></i></a>
-            <a  href="#"><i class="bi bi-google mx-2 text-muted"></i></a>
+            <a href="https://mobile.twitter.com/justinbieber"><i class="bi bi-twitter mx-2 text-muted "></i></a>
+            <a href="https://www.instagram.com/justinbieber/"><i class="bi bi-instagram mx-2 text-muted"></i></a>
+            <a href="https://www.google.com/"><i class="bi bi-google mx-2 text-muted"></i></a>
           </p>
           <button id="boton1" type="button" class="btn mt-4 fw-semibold " style="background-color:#b2e8f9 ;">VER
             PERFIL</button>
@@ -345,13 +360,13 @@
             <h6 class="text-uppercase fw-bold">Navegación</h6>
             <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
             <p>
-              <a href="#!" class="text-white">Home</a>
+              <a href="index.html" class="text-white">Home</a>
             </p>
             <p>
-              <a href="#!" class="text-white">Sobre nosotros</a>
+              <a href="About_us.html" class="text-white">Sobre nosotros</a>
             </p>
             <p>
-              <a href="#!" class="text-white">Adopta ¡YA! </a>
+              <a href="contact.html" class="text-white">Adopta ¡YA! </a>
             </p>
             <p>
               <a href="blog.html" class="text-white">Blog</a>
@@ -384,68 +399,68 @@
     <!-- Copyright -->
   </footer>
   <!-- Footer -->
-<script>
-  //NAV
+  <script>
+    //NAV
 
-$("#opcion1").mouseover(function() {
-          $(this).addClass("negrita");
-        });
+    $("#opcion1").mouseover(function () {
+      $(this).addClass("negrita");
+    });
 
-        $("#opcion2").mouseover(function() {
-          $(this).addClass("negrita");
-        });
-        $("#opcion3").mouseover(function() {
-          $(this).addClass("negrita");
-          
-        });
+    $("#opcion2").mouseover(function () {
+      $(this).addClass("negrita");
+    });
+    $("#opcion3").mouseover(function () {
+      $(this).addClass("negrita");
 
-        $("#opcion4").mouseover(function() {
-          $(this).addClass("negrita");
-        
-        });
+    });
 
-        $("#opcion5").mouseover(function() {
-          $(this).addClass("negrita");
-          
-        });
+    $("#opcion4").mouseover(function () {
+      $(this).addClass("negrita");
 
-        $("#opcion1").mouseout(function() {
-          $(this).removeClass("negrita");
-        });
+    });
 
-        $("#opcion2").mouseout(function() {
-          $(this).removeClass("negrita");
-        });
+    $("#opcion5").mouseover(function () {
+      $(this).addClass("negrita");
 
-        $("#opcion3").mouseout(function() {
-          $(this).removeClass("negrita");
-        });
+    });
 
-        $("#opcion4").mouseout(function() {
-          $(this).removeClass("negrita");
-        });
-        $("#opcion5").mouseout(function() {
-          $(this).removeClass("negrita");
-        });
+    $("#opcion1").mouseout(function () {
+      $(this).removeClass("negrita");
+    });
 
-        $(".myBtn").hover(
-            function() {
-              $(this).addClass("grow");
-            },
-            function() {
-              $(this).removeClass("grow");
-            }
-          );
+    $("#opcion2").mouseout(function () {
+      $(this).removeClass("negrita");
+    });
 
-          $("#myTitle").mouseover(function() {
-           
-           $("#myTitle").animate({
-             width: "450px",
-             color:"blue",
-             
-           }, 300);
-         });
-</script>
+    $("#opcion3").mouseout(function () {
+      $(this).removeClass("negrita");
+    });
+
+    $("#opcion4").mouseout(function () {
+      $(this).removeClass("negrita");
+    });
+    $("#opcion5").mouseout(function () {
+      $(this).removeClass("negrita");
+    });
+
+    $(".myBtn").hover(
+      function () {
+        $(this).addClass("grow");
+      },
+      function () {
+        $(this).removeClass("grow");
+      }
+    );
+
+    $("#myTitle").mouseover(function () {
+
+      $("#myTitle").animate({
+        width: "450px",
+        color: "blue",
+
+      }, 300);
+    });
+  </script>
 </body>
 
 </html>
