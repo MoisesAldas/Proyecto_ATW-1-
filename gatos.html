@@ -287,6 +287,19 @@
         ScrollReveal().reveal('.card', { delay: 500 });
         ScrollReveal().reveal('footer', { delay: 500 });
         ScrollReveal().reveal('.navbar', { delay: 500 });
+        
       </script>
+      <script>
+        $(document).ready(function () {
+          $(".card-img-top").hover(
+            function () {
+              $(this).addClass('animated bounce');
+            },
+            function () {
+              $(this).removeClass('animated bounce');
+            }
+          );
+        });
+        </script>
 </body>
 </html>
