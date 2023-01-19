@@ -275,6 +275,23 @@
         ScrollReveal().reveal('p', { delay: 500 });
       </script>
 
-
+<script>
+  $(document).ready(function () {
+    $(".card-img-top").hover(
+      function () {
+        $(this).animate({
+          opacity: 0.25,
+          left: "+=50",
+        }, 1000, "easeOutBounce");
+      },
+      function () {
+        $(this).animate({
+          opacity: 1,
+          left: "-=50",
+        }, 1000, "easeOutBounce");
+      }
+    );
+  });
+  </script>
 </body>
 </html>
