@@ -31,7 +31,32 @@
             }
           );
         });
+        
   </script>      
+        <script>
+          $(document).ready(function () {
+            $(".card").hover(
+              function () {
+                $(this).addClass('animated bounce');
+              },
+              function () {
+                $(this).removeClass('animated bounce');
+              }
+            );
+          });
+          </script>
+          <script>
+            $(document).ready(function () {
+              $(".card-img-top").hover(
+                function () {
+                  $(this).velocity({ scale: 1.2 }, { duration: 300 });
+                },
+                function () {
+                  $(this).velocity({ scale: 1 }, { duration: 300 });
+                }
+              );
+            });
+            </script>
 </head>
 <body>
   
