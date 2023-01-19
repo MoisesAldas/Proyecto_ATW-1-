@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -23,8 +24,8 @@
       })
     });
 
-    $('#boton').click(function () {
-      $('#info').animate({
+    $("#boton").click(function () {
+      $(".info").animate({
         height: "toggle",
         opacity: "toggle"
       }, "slow");
@@ -47,21 +48,33 @@
       });
     });
 
-    $(document).ready(function(){
-      $('#iconos').mouseover(function(){
+    $(document).ready(function () {
+      $('#iconos').mouseover(function () {
         $(this).animate(
           {
-            width: '40px'
+            width: '20px'
           }
         )
       });
-
-      $('#iconos').mouseout(function(){
+      $('#iconos').mouseout(function () {
         $(this).animate(
           {
-            width: '30px'
+            width: '16px'
           }
         )
+      });
+    });
+
+    $(document).ready(function () {
+      $('#img').mouseover(function () {
+        $(this).animate({
+
+        });
+      });
+      $('#img').mouseout(function () {
+        $(this).animate({
+
+        });
       });
     });
 
@@ -69,6 +82,10 @@
   <style>
     .parte1 {
       text-align: justify;
+    }
+
+    #info {
+      display: none;
     }
   </style>
 </head>
@@ -148,8 +165,8 @@
           de compañía en nuestro país. Mientras los abandonos no disminuyen, la preocupación es mayor porque, además, la
           adopción no aumenta.
         </p>
-        <img class="img-fluid my-5" src="imagenes/blog1.jpg" alt="perritos">
-        <p  class="text-muted ">
+        <img id="img" class="img-fluid my-5" src="imagenes/blog1.jpg" alt="perritos">
+        <p class="text-muted ">
           Adoptar o comprar un perro supone asumir una responsabilidad. Cuando estés considerando la posibilidad de
           adoptar un perro y dejar que forme parte de tu vida, debes tener en cuenta que se convertirá en un miembro más
           de tu familia. Se adaptará a tu estilo de vida, y tu día a día se convertirá en el suyo.
@@ -157,7 +174,7 @@
           un estrés y un sufrimiento innecesarios que les perjudica de una manera que ni se merecen, ni es justa para
           ellos.
         </p>
-        <p  class="text-muted ">
+        <p class="text-muted ">
           Adoptar una mascota va más allá de organizar tu hogar, comprar algunos artículos y proporcionarle techo y
           alimento. Requiere un compromiso total hacia otro ser vivo que ha sufrido y está esperando una segunda
           oportunidad para recibir el amor y cuidado que merece. Muchas personas deciden adoptar porque sienten un vacío
@@ -165,7 +182,7 @@
           sienten la motivación de hacer una “obra de buena fe”. Al final, lo importante es que con tu nuevo compañero
           disfrutarás de muchos momentos de alegría
         </p>
-        <img class="img-fluid my-5" src="imagenes/blog2.jpg" alt="gatitos">
+        <img id="img" class="img-fluid my-5" src="imagenes/blog2.jpg" alt="gatitos">
         <p id="p3" class="text-muted ">
           Lo mismo pasa en gatos,
           hay muchas razones por las que adoptar un gato, y muchas más también para adoptar un gato mestizo. Porque
@@ -176,7 +193,7 @@
           tienen carácter y comportamientos muy diferentes de los gatos de raza y, por supuesto, únicos en cada
           ejemplar.
         </p>
-        <p  class="text-muted">
+        <p class="text-muted">
 
           Si es la primera vez que vas a adoptar un gato, en AdoptME puedes conocer todas las claves y requisitos
           previos para adoptar a un felino. Si, por el contrario, ya lo tienes claro, debes ir ya conociendolo y que
@@ -185,15 +202,16 @@
         </p>
         <p id="iconos" class="mx-2 my-5 text-muted">
           ¡Compartir esta publicación!
-          <a href="#"><i class="bi bi-facebook mx-2 text-muted "></i></a>
-          <a href="#"><i class="bi bi-twitter mx-2 text-muted "></i></a>
-          <a href="#"><i class="bi bi-instagram mx-2 text-muted"></i></a>
+          <a href="https://www.facebook.com/brandobermello.18?mibextid=LQQJ4d "><i
+              class="bi bi-facebook mx-2 text-muted "></i></a>
+          <a href="https://mobile.twitter.com/justinbieber"><i class="bi bi-twitter mx-2 text-muted "></i></a>
+          <a href="https://www.instagram.com/justinbieber/"><i class="bi bi-instagram mx-2 text-muted"></i></a>
           <a href="#"><i class="bi bi-google mx-2 text-muted"></i></a>
         </p>
       </div>
       <div class="col-lg-6 col-sm-12 align-items-center justify-content-center">
         <div class=" text-center p-5 mx-5 my-5" style="background-color: #E8E8E8;">
-          <img class="center-block img-fluid my-4" width="150px" src="imagenes/goat.webp" alt="persona">
+          <img id="enner" class="center-block img-fluid my-4" width="150px" src="imagenes/goat.webp" alt="persona">
           <h4>
             KEVIN AZUA
           </h4>
@@ -208,7 +226,8 @@
             <a href="#"><i class="bi bi-instagram mx-2 text-muted"></i></a>
             <a href="#"><i class="bi bi-google mx-2 text-muted"></i></a>
           </p>
-          <button type="button" class="btn   mt-4 fw-semibold " style="background-color:#b2e8f9 ;">VER PERFIL</button>
+          <button id="boton" type="button" class="btn   mt-4 fw-semibold " style="background-color:#b2e8f9 ;">VER
+            PERFIL</button>
 
         </div>
 
