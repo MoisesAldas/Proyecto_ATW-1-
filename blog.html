@@ -10,33 +10,40 @@
   <title>Blog</title>
   <link rel="icon" type="image/png" sizes="32x32" href="imagenes/paw-print.ico">
   <script>
-    $(document).ready(function(){
-        $('#boton').mouseover(function(){
-          $(this).css('background-color', 'black')
-          $(this).css('color', '#b2e8f9')
-        })
-        $('#boton').mouseout(function(){
-          $(this).css('background-color', '#b2e8f9')
-          $(this).css('color', 'black')
-        })
-      });
+    $(document).ready(function () {
+      $('#boton').mouseover(function () {
+        $(this).css('background-color', 'black')
+        $(this).css('color', '#b2e8f9')
+      })
+      $('#boton').mouseout(function () {
+        $(this).css('background-color', '#b2e8f9')
+        $(this).css('color', 'black')
+      })
+    });
 
-      $(document).ready(function(){
-        $('#enner').mouseover(function(){
-          $(this).animate(
-            {
-              width: '200px',
-            }
-          );
-        });
-        $('#enner').mouseout(function(){
-          $(this).animate(
-            {
-              width: '150px',
-            }
-          );
-        });
-      });
+    $('#boton').click(function () {
+      $('#info').animate({
+        height: "toggle",
+        opacity: "toggle"
+      }, "slow");
+    });
+
+    $(document).ready(function () {
+      $('#enner').mouseover(function () {
+        $(this).animate(
+          {
+            width: '200px',
+          }
+        );
+      });
+      $('#enner').mouseout(function () {
+        $(this).animate(
+          {
+            width: '150px',
+          }
+        );
+      });
+    });
   </script>
   <style>
     .parte1 {
@@ -46,46 +53,49 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg px-4  " style="background-color:#b2e8f9 ;">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"> <span class="fs-2 fw-bold">AdoptMe</span> </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-         
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="blog.html">Blogs</a>
-                  </li>
-                
-                  <li class="nav-item">
-                    <a class="nav-link active "href="About_us.html">Sobre nosotros</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Mascotas
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="gatos.html">Gatos</a></li>
-                      <li><a class="dropdown-item" href="perros.html">Perros</a></li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-                <form class="d-flex" role="search">
-                 
-                  <a href="contact.html"><button type="button" class="btn   fw-semibold " style="background-color:#b2e8f9 ;border-color: #151515;">Contacto</button> </a>
-                </form>
-              </div>
-      
-      
-      
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-lg px-4  " style="background-color:#b2e8f9 ;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"> <span class="fs-2 fw-bold">AdoptMe</span> </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="blog.html">Blogs</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active " href="About_us.html">Sobre nosotros</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Mascotas
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="gatos.html">Gatos</a></li>
+              <li><a class="dropdown-item" href="perros.html">Perros</a></li>
+
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+
+          <a href="contact.html"><button type="button" class="btn   fw-semibold "
+              style="background-color:#b2e8f9 ;border-color: #151515;">Contacto</button> </a>
+        </form>
+      </div>
+
+
+
+    </div>
+  </nav>
 
   <!---->
 
@@ -94,7 +104,9 @@
       <div class="col-lg-12 col-sm-12 text-center" style="background-color: #E8E8E8;">
         <h1 class="text-center p-5 fw-bold">BLOG</h1>
       </div>
-      <div class="col-sm-12 ">    <hr></div>
+      <div class="col-sm-12 ">
+        <hr>
+      </div>
       <div class="col-lg-6 col-sm-12 p-0">
       </div>
     </div>
@@ -176,6 +188,14 @@
             <a href="#"><i class="bi bi-google mx-2 text-muted"></i></a>
           </p>
           <button type="button" class="btn   mt-4 fw-semibold " style="background-color:#b2e8f9 ;">VER PERFIL</button>
+
+        </div>
+
+        <div class=" text-center p-5 mx-5 my-5" id="info" style="background-color: #E8E8E8;">
+          Me llamo Kevin, soy un apasionado por los animales desde siempre. Mi vida ha estado rodeada de mascotas, desde
+          mi primer perro hasta mi actual gato. Siempre me ha parecido importante educar a las personas sobre el cuidado
+          y el bienestar de los animales, y es por eso que decidí crear este blog.
+          
         </div>
       </div>
     </div>
