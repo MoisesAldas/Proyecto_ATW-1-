@@ -21,6 +21,13 @@
         })
       });
 
+      $('#boton').click(function(){
+        $('#info').animate({
+          height: "toggle",
+          opacity: "toggle"
+        }, "slow");
+      });
+
       $(document).ready(function(){
         $('#enner').mouseover(function(){
           $(this).animate(
@@ -175,7 +182,13 @@
             <a href="#"><i class="bi bi-instagram mx-2 text-muted"></i></a>
             <a href="#"><i class="bi bi-google mx-2 text-muted"></i></a>
           </p>
-          <button type="button" class="btn   mt-4 fw-semibold " style="background-color:#b2e8f9 ;">VER PERFIL</button>
+          <button type="button" class="btn   mt-4 fw-semibold " 
+          style="background-color:#b2e8f9 ;">VER PERFIL</button>
+
+        </div>
+
+        <div class=" text-center p-5 mx-5 my-5" id="info" style="background-color: #E8E8E8;">
+          información
         </div>
       </div>
     </div>
