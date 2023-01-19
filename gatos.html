@@ -256,93 +256,18 @@
       
       </div>
 
+
       <script>
-        $(document).ready(function() {
-          $(".myBtn").hover(
-            function() {
-              $(this).addClass("grow");
+        $(document).ready(function () {
+          $(".card-img-top").hover(
+            function () {
+              $(this).animate({ height: "300px", width: "300px" });
             },
-            function() {
-              $(this).removeClass("grow");
+            function () {
+              $(this).animate({ height: "200px", width: "200px" });
             }
           );
-
-
-          $("#myTitle").mouseover(function() {
-           
-          $("#myTitle").animate({
-            width: "550px",
-            color:"blue",
-            
-          }, 300);
         });
-
-        $("#opcion1").mouseover(function() {
-          $(this).addClass("negrita");
-        });
-
-        $("#opcion2").mouseover(function() {
-          $(this).addClass("negrita");
-        });
-        $("#opcion3").mouseover(function() {
-          $(this).addClass("negrita");
-          
-        });
-
-        $("#opcion4").mouseover(function() {
-          $(this).addClass("negrita");
-        
-        });
-
-        $("#opcion5").mouseover(function() {
-          $(this).addClass("negrita");
-          
-        });
-
-        $("#opcion1").mouseout(function() {
-          $(this).removeClass("negrita");
-        });
-
-        $("#opcion2").mouseout(function() {
-          $(this).removeClass("negrita");
-        });
-
-        $("#opcion3").mouseout(function() {
-          $(this).removeClass("negrita");
-        });
-
-        $("#opcion4").mouseout(function() {
-          $(this).removeClass("negrita");
-        });
-        $("#opcion5").mouseout(function() {
-          $(this).removeClass("negrita");
-        });
-
-        $("#Contactos").mouseover(function() {
-
-          $(this).css("background-color", "black");
-          $(this).css("color", "white");});
-
-          $("#Contactos").mouseout(function() {
-                  $(this).remove(css("background-color", "black"));
-                  $(this).remove(css("color", "white"));});
-
-          $("#topBtn").click(function() {
-            $("html, body").animate({ scrollTop: 0 }, "slow");
-            return false;
-          });
-
-          $(".contenerdor").hide().fadeIn(3000)
-                  
-  
-
-
-      });
-
-
-  
-
       </script>
-
 </body>
 </html>
