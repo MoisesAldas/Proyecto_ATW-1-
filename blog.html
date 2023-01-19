@@ -41,6 +41,18 @@
       });
     });
 
+
+    $(document).ready(function () {
+      $('#frase').mouseover(function () {
+        $(this).css('color', '#b2e8f9');
+        $(this).css("font-size", "40px");
+      });
+      $('#frase').mouseout(function () {
+        $(this).css('color', 'black');
+        $(this).css("font-size", "29px");
+      });
+    });
+
     $(document).ready(function () {
       $("#boton1").click(function () {
         console.log("Lesly");
@@ -51,15 +63,16 @@
       });
     });
 
-    $(document).ready(function () {
-      $('#img').mouseover(function () {
-        $(this).animate({
 
+    $(document).ready(function () {
+      $('#perritos').mouseover(function () {
+        $(this).animate({
+          width: '670px'
         });
       });
-      $('#img').mouseout(function () {
+      $('#perritos').mouseout(function () {
         $(this).animate({
-
+          width: '645px'
         });
       });
     });
@@ -135,7 +148,7 @@
     </div>
     <div class="row p-5">
       <div class="col-lg-6 col-sm-12 parte1 pl-5 ">
-        <h2 class="text-center my-5 fw-bold">La adopción, una nueva oportunidad para
+        <h2 id="frase" class="text-center my-5 fw-bold">La adopción, una nueva oportunidad para
           los perros y gatos abandonados</h2>
         <div class="my-4">
           <div class="text-muted">
@@ -150,7 +163,7 @@
           de compañía en nuestro país. Mientras los abandonos no disminuyen, la preocupación es mayor porque, además, la
           adopción no aumenta.
         </p>
-        <img id="img" class="img-fluid my-5" src="imagenes/blog1.jpg" alt="perritos">
+        <img id="perritos" class="img-fluid my-5" src="imagenes/blog1.jpg" alt="perritos">
         <p class="text-muted ">
           Adoptar o comprar un perro supone asumir una responsabilidad. Cuando estés considerando la posibilidad de
           adoptar un perro y dejar que forme parte de tu vida, debes tener en cuenta que se convertirá en un miembro más
