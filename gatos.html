@@ -341,6 +341,18 @@
             );
           });
           </script>
-          
+          <script>
+            $(document).ready(function () {
+              $(".card-img-top").hover(
+                function () {
+                  $(this).addClass('animated fadeInLeft');
+                },
+                function () {
+                  $(this).addClass('animated fadeOutRight');
+                }
+              );
+            });
+            </script>
+            
 </body>
 </html>
