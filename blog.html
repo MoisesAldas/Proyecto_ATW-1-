@@ -12,6 +12,33 @@
 
   <title>Blog</title>
   <link rel="icon" type="image/png" sizes="32x32" href="imagenes/paw-print.ico">
+  <style>
+    a {
+         text-decoration: none !important;
+     }
+     .myBtn {
+   font-size: 20px;
+   padding: 10px;
+   transition: all 0.3s ease-in-out;
+ }
+ 
+ .grow {
+   transform: scale(1.5);
+ }
+ 
+ .negrita {
+   font-weight: bold;
+ }
+ 
+ #topBtn{
+   background-color: black;
+ color: white;
+ }
+ .dropdown:hover .dropdown-menu {
+     display: block;
+   }
+ 
+  </style>
   <script>
     $(document).ready(function () {
       $('#boton1').mouseover(function () {
@@ -89,51 +116,49 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg px-4  " style="background-color:#b2e8f9 ;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html"> <span class="fs-2 fw-bold">AdoptMe</span> </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
+<!-- Header -->
+<nav class="navbar navbar-expand-lg px-4  " style="background-color:#b2e8f9 ;">
+  <div class="container-fluid">
+    <a class="navbar-brand " href="index.html" > <span class="fs-2 fw-bold" id="myTitle">AdoptME</span> </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+   
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="blog.html">Blogs</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link active " href="About_us.html">Sobre nosotros</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Mascotas
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="gatos.html">Gatos</a></li>
-              <li><a class="dropdown-item" href="perros.html">Perros</a></li>
-
-            </ul>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-
-          <a href="contact.html"><button type="button" class="btn   fw-semibold "
-              style="background-color:#b2e8f9 ;border-color: #151515;">Contacto</button> </a>
-        </form>
-      </div>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" id="opcion1">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="blog.html" id="opcion2">Blog</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link active "href="About_us.html" id="opcion3">Sobre nosotros</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="opcion4" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Mascotas
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="gatos.html">Gatos</a></li>
+                <li><a class="dropdown-item" href="perros.html">Perros</a></li>
+                
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+           
+            <a href="contact.html"><button type="button" class="btn   fw-semibold myBtn" style="background-color:#b2e8f9 ;border-color: #151515;" id="Contactos">Contacto</button> </a>
+          </form>
+        </div>
 
 
 
-    </div>
-  </nav>
+  </div>
+</nav>
 
-  <!---->
+  <!--Body--->
 
   <div class="container-fluid">
     <div class="row">
@@ -359,7 +384,68 @@
     <!-- Copyright -->
   </footer>
   <!-- Footer -->
+<script>
+  //NAV
 
+$("#opcion1").mouseover(function() {
+          $(this).addClass("negrita");
+        });
+
+        $("#opcion2").mouseover(function() {
+          $(this).addClass("negrita");
+        });
+        $("#opcion3").mouseover(function() {
+          $(this).addClass("negrita");
+          
+        });
+
+        $("#opcion4").mouseover(function() {
+          $(this).addClass("negrita");
+        
+        });
+
+        $("#opcion5").mouseover(function() {
+          $(this).addClass("negrita");
+          
+        });
+
+        $("#opcion1").mouseout(function() {
+          $(this).removeClass("negrita");
+        });
+
+        $("#opcion2").mouseout(function() {
+          $(this).removeClass("negrita");
+        });
+
+        $("#opcion3").mouseout(function() {
+          $(this).removeClass("negrita");
+        });
+
+        $("#opcion4").mouseout(function() {
+          $(this).removeClass("negrita");
+        });
+        $("#opcion5").mouseout(function() {
+          $(this).removeClass("negrita");
+        });
+
+        $(".myBtn").hover(
+            function() {
+              $(this).addClass("grow");
+            },
+            function() {
+              $(this).removeClass("grow");
+            }
+          );
+
+          $("#myTitle").mouseover(function() {
+           
+           $("#myTitle").animate({
+             width: "450px",
+             color:"blue",
+             
+           }, 300);
+         });
+</script>
 </body>
 
 </html>
