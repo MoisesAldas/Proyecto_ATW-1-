@@ -34,18 +34,29 @@
       $('#enner').mouseover(function () {
         $(this).animate(
           {
-            width: '200px',
+            width: '200px'
           }
         );
       });
       $('#enner').mouseout(function () {
         $(this).animate(
           {
-            width: '150px',
+            width: '150px'
           }
         );
       });
     });
+
+    $(document).ready(function(){
+      $('#iconos').mouseover(function(){
+        $(this).animate(
+          {
+            width: '40px'
+          }
+        )
+      });
+    });
+    
   </script>
   <style>
     .parte1 {
@@ -118,9 +129,9 @@
           los perros y gatos abandonados</h2>
         <div class="my-4">
           <div class="text-muted">
-            <i class="bi bi-calendar3 mx-2 text-info"></i>
+            <i id="iconos" class="bi bi-calendar3 mx-2 text-info"></i>
             Oct 21, 2020 at 12:05 pm
-            <i class="bi bi-newspaper  mx-2 text-info"></i>
+            <i id="iconos" class="bi bi-newspaper  mx-2 text-info"></i>
             Article
           </div>
         </div>
@@ -164,7 +175,7 @@
           se vaya acostumbrando a tu compañía y a su nuevo espacio de vida.
 
         </p>
-        <p class="mx-2 my-5 text-muted">
+        <p id="iconos" class="mx-2 my-5 text-muted">
           ¡Compartir esta publicación!
           <a href="#"><i class="bi bi-facebook mx-2 text-muted "></i></a>
           <a href="#"><i class="bi bi-twitter mx-2 text-muted "></i></a>
