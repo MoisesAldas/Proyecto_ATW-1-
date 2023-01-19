@@ -14,11 +14,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="imagenes/paw-print.ico">
   <script>
     $(document).ready(function () {
-      $('#boton').mouseover(function () {
+      $('#boton1').mouseover(function () {
         $(this).css('background-color', 'black')
         $(this).css('color', '#b2e8f9')
       })
-      $('#boton').mouseout(function () {
+      $('#boton1').mouseout(function () {
         $(this).css('background-color', '#b2e8f9')
         $(this).css('color', 'black')
       })
@@ -42,31 +42,13 @@
     });
 
     $(document).ready(function () {
-      $('#iconos').mouseover(function () {
-        $(this).animate(
-          {
-            width: '20px'
-          }
-        )
-      });
-
-      $('#iconos').mouseout(function () {
-        $(this).animate(
-          {
-            width: '16px'
-          }
-        )
-      });
-    });
-
-    $(document).ready(function(){
       $("#boton1").click(function () {
-      console.log("Lesly");
-      $(".info").animate({
-        height: "toggle",
-        opacity: "toggle"
-      }, "slow");
-    });
+        console.log("Lesly");
+        $(".info").animate({
+          height: "toggle",
+          opacity: "toggle"
+        }, "slow");
+      });
     });
 
     $(document).ready(function () {
@@ -87,7 +69,6 @@
     .parte1 {
       text-align: justify;
     }
-
     .info {
       display: none;
     }
@@ -158,9 +139,9 @@
           los perros y gatos abandonados</h2>
         <div class="my-4">
           <div class="text-muted">
-            <i id="iconos" class="bi bi-calendar3 mx-2 text-info"></i>
+            <i  class="bi bi-calendar3 mx-2 text-info"></i>
             Oct 21, 2020 at 12:05 pm
-            <i id="iconos" class="bi bi-newspaper  mx-2 text-info"></i>
+            <i  class="bi bi-newspaper  mx-2 text-info"></i>
             Article
           </div>
         </div>
@@ -204,7 +185,7 @@
           se vaya acostumbrando a tu compañía y a su nuevo espacio de vida.
 
         </p>
-        <p id="iconos" class="mx-2 my-5 text-muted">
+        <p  class="mx-2 my-5 text-muted">
           ¡Compartir esta publicación!
           <a href="https://www.facebook.com/brandobermello.18?mibextid=LQQJ4d "><i
               class="bi bi-facebook mx-2 text-muted "></i></a>
@@ -224,32 +205,36 @@
             Trabajar en lo que más me apasiona: el mundo animal. Compagino mi trabajo colaborando como voluntario en
             protectoras, santuarios, reservas y cualquier evento o actividad relacionada.
           </p>
-          <p  class="mx-2 my-5 text-muted">
-            <a id="iconos" href="https://www.facebook.com/brandobermello.18?mibextid=LQQJ4d"><i
+          <p class="mx-2 my-5 text-muted">
+            <a  href="https://www.facebook.com/brandobermello.18?mibextid=LQQJ4d"><i
                 class="bi bi-facebook mx-2 text-muted "></i></a>
-            <a id="iconos" href="https://mobile.twitter.com/justinbieber"><i class="bi bi-twitter mx-2 text-muted "></i></a>
-            <a id="iconos" href="https://www.instagram.com/justinbieber/"><i class="bi bi-instagram mx-2 text-muted"></i></a>
-            <a id="iconos" href="#"><i class="bi bi-google mx-2 text-muted"></i></a>
+            <a  href="https://mobile.twitter.com/justinbieber"><i
+                class="bi bi-twitter mx-2 text-muted "></i></a>
+            <a  href="https://www.instagram.com/justinbieber/"><i
+                class="bi bi-instagram mx-2 text-muted"></i></a>
+            <a  href="#"><i class="bi bi-google mx-2 text-muted"></i></a>
           </p>
           <button id="boton1" type="button" class="btn mt-4 fw-semibold " style="background-color:#b2e8f9 ;">VER
             PERFIL</button>
         </div>
 
-        <div class="p-5 mx-5 my-5 info align-items-center justify-content-center" style="background-color: #E8E8E8;" >
-          <p class="text-muted" >
-            Me llamo Kevin Azua, soy un apasionado por los animales desde siempre. Mi vida ha estado rodeada de mascotas,
-          desde
-          mi primer perro hasta mi actual gato. Siempre me ha parecido importante educar a las personas sobre el
-          cuidado,
-          el bienestar de los animales y la importancia de la adopción, y es por eso que decidí crear este blog.
+        <div class="p-5 mx-5 my-5 info align-items-center justify-content-center" style="background-color: #E8E8E8;">
+          <p class="text-muted">
+            Me llamo Kevin Azua, soy un apasionado por los animales desde siempre. Mi vida ha estado rodeada de
+            mascotas,
+            desde
+            mi primer perro hasta mi actual gato. Siempre me ha parecido importante educar a las personas sobre el
+            cuidado,
+            el bienestar de los animales y la importancia de la adopción, y es por eso que decidí crear este blog.
           </p>
-          <p class="text-muted" >
+          <p class="text-muted">
             Creo firmemente en la importancia de dar un hogar amoroso y seguro a todos los animales, y espero continuar
-          dedicando mi vida a la promoción de la adopción responsable y la protección de los derechos de los animales.
+            dedicando mi vida a la promoción de la adopción responsable y la protección de los derechos de los animales.
 
-          En mi blog, comparto mi conocimiento y experiencia sobre el cuidado de mascotas, la protección de especies en
-          peligro de extinción, la alimentación y la salud de los animales, y la defensa de los derechos de los
-          animales.
+            En mi blog, comparto mi conocimiento y experiencia sobre el cuidado de mascotas, la protección de especies
+            en
+            peligro de extinción, la alimentación y la salud de los animales, y la defensa de los derechos de los
+            animales.
           </p>
         </div>
       </div>
