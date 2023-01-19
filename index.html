@@ -10,10 +10,21 @@
   <link rel="icon" type="image/png" sizes="32x32" href="imagenes/paw-print.ico">
   <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
  <style>
    a {
         text-decoration: none !important;
     }
+    #myBtn {
+  font-size: 20px;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.grow {
+  transform: scale(1.7);
+}
+
  </style>
  
 </head>
@@ -67,7 +78,7 @@
                 <h1 class="text-center" style="font-size:10vh ;"> ¡Adoptanos!</h1>
                 <div class="row justify-content-center ">
                     <div class="col-3">
-                        <button type="button" class="btn   mt-5 mb-3 fw-semibold " style="background-color:#b2e8f9 ;">Información</button>
+                        <button type="button" id="myBtn" class="btn   mt-5 mb-3 fw-semibold " style="background-color:#b2e8f9 ;">Información</button>
                     </div>
                     
                 </div>
@@ -250,6 +261,17 @@
       
       </div>
 
+      <script>
+        $("#myBtn").hover(
+  function() {
+    $(this).addClass("grow");
+  },
+  function() {
+    $(this).removeClass("grow");
+  }
+);
+
+      </script>
 
 </body>
 </html>
