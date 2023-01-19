@@ -55,13 +55,25 @@
           }
         )
       });
-
       $('#iconos').mouseout(function(){
         $(this).animate(
           {
             width: '16px'
           }
         )
+      });
+    });
+
+    $(document).ready(function(){
+      $('#img').mouseover(function(){
+        $(this).animate({
+
+        });
+      });
+      $('#img').mouseout(function(){
+        $(this).animate({
+
+        });
       });
     });
 
@@ -148,7 +160,7 @@
           de compañía en nuestro país. Mientras los abandonos no disminuyen, la preocupación es mayor porque, además, la
           adopción no aumenta.
         </p>
-        <img class="img-fluid my-5" src="imagenes/blog1.jpg" alt="perritos">
+        <img id="img" class="img-fluid my-5" src="imagenes/blog1.jpg" alt="perritos">
         <p  class="text-muted ">
           Adoptar o comprar un perro supone asumir una responsabilidad. Cuando estés considerando la posibilidad de
           adoptar un perro y dejar que forme parte de tu vida, debes tener en cuenta que se convertirá en un miembro más
@@ -165,7 +177,7 @@
           sienten la motivación de hacer una “obra de buena fe”. Al final, lo importante es que con tu nuevo compañero
           disfrutarás de muchos momentos de alegría
         </p>
-        <img class="img-fluid my-5" src="imagenes/blog2.jpg" alt="gatitos">
+        <img id="img" class="img-fluid my-5" src="imagenes/blog2.jpg" alt="gatitos">
         <p id="p3" class="text-muted ">
           Lo mismo pasa en gatos,
           hay muchas razones por las que adoptar un gato, y muchas más también para adoptar un gato mestizo. Porque
