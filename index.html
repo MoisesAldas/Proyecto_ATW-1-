@@ -15,25 +15,34 @@
    a {
         text-decoration: none !important;
     }
-    #myBtn {
+    .myBtn {
   font-size: 20px;
   padding: 10px;
   transition: all 0.3s ease-in-out;
 }
 
 .grow {
-  transform: scale(1.7);
+  transform: scale(1.5);
+}
+
+.negrita {
+  font-weight: bold;
+}
+
+#topBtn{
+  background-color: black;
+color: white;
 }
 
  </style>
  
 </head>
 <body>
-  
 
+  <div class="contenerdor">
     <nav class="navbar navbar-expand-lg px-4  " style="background-color:#b2e8f9 ;">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"> <span class="fs-2 fw-bold">AdoptME</span> </a>
+          <a class="navbar-brand " href="index.html" > <span class="fs-2 fw-bold" id="myTitle">AdoptME</span> </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -41,17 +50,17 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#" id="opcion1">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="blog.html">Blog</a>
+                    <a class="nav-link active" href="blog.html" id="opcion2">Blog</a>
                   </li>
                 
                   <li class="nav-item">
-                    <a class="nav-link active "href="About_us.html">Sobre nosotros</a>
+                    <a class="nav-link active "href="About_us.html" id="opcion3">Sobre nosotros</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle active" href="#" id="opcion4" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Mascotas
                     </a>
                     <ul class="dropdown-menu">
@@ -63,7 +72,7 @@
                 </ul>
                 <form class="d-flex" role="search">
                  
-                  <a href="contact.html"><button type="button" class="btn   fw-semibold " style="background-color:#b2e8f9 ;border-color: #151515;">Contacto</button> </a>
+                  <a href="contact.html"><button type="button" class="btn   fw-semibold myBtn" style="background-color:#b2e8f9 ;border-color: #151515;" id="Contactos">Contacto</button> </a>
                 </form>
               </div>
 
@@ -75,17 +84,17 @@
     <div class="container-fluid " style="margin:0px !important ;padding:0px !important ; background-color: #E8E8E8;" >
         <div class="row justify-content-center align-items-center ">
             <div class="col-lg-6 col-12 "><p class="text-center " style="font-size:7vh ;">Somos Mascotas</p>
-                <h1 class="text-center" style="font-size:10vh ;"> ¡Adoptanos!</h1>
+                <h1 class="text-center " style="font-size:10vh " > ¡Adoptanos!</h1>
                 <div class="row justify-content-center ">
                     <div class="col-3">
-                        <button type="button" id="myBtn" class="btn   mt-5 mb-3 fw-semibold " style="background-color:#b2e8f9 ;">Información</button>
+                        <button type="button"  class="btn   mt-5 mb-3 fw-semibold  myBtn" style="background-color:#b2e8f9 ;">Información</button>
                     </div>
                     
                 </div>
                 
             </div>
             <div class="col-lg-6 col-10">
-                <img src="imagenes/header.jpg" class="img-fluid " alt="">
+                <img src="imagenes/header.jpg" class="img-fluid " alt="" id="myImg">
             </div>
            
         </div>
@@ -105,7 +114,7 @@
                 <p class="mb-4"> 
                   Me abandonaron y ahora busco a un dueño que quiera jugar conmigo. Me gusta mucho jugar con la pelota y soy un perro muy bien cuidado por la familia de AdoptME espero poder encontrar un hogar. 
                 </p>
-                <button type="button" class="btn   mt-4 fw-semibold  " style="background-color:#b2e8f9 ;">Información</button>
+                <button type="button" class="btn   mt-4 fw-semibold myBtn  " style="background-color:#b2e8f9 ;">Información</button>
                
             </div>
            
@@ -115,26 +124,25 @@
     <div class="container-fluid  justify-content-center " style="background-color: #B2E7F9
     ; margin-top: 100px; padding:80px ; margin-bottom: 100px;" >
         <div class="row justify-content-center align-items-center mt- ">
-            <div class="col-lg-12 "> <h1 class="text-center mb-5">Adoptanos</h1> </div>
+            <div class="col-lg-12 "> <h1 class="text-center mb-5 myTitle" >Adoptanos</h1> </div>
             <hr>
             <div class="col-lg-3"> <img src="imagenes/gallery-original-6.jpg " class="img-fluid" alt=""></div>
             <div class="col-lg-3"><img src="imagenes/gato10.png"  class="img-fluid"    alt=""></div>
             <div class="col-lg-3"><img src="imagenes/gato11.jpg" class="img-fluid" alt=""></div>
             <div class="col-lg-3"><img src="imagenes/gallery-original-2.jpg" class="img-fluid" alt=""></div>
             <div class="row  justify-content-center align-items-center ">
-                <div class="col-lg-2"> <a href="perros.html"><button type="button"  class="btn  mt-5  fw-semibold " style="background-color:white ;">Información Perros</button></a> </div>
-                <div class="col-lg-2"> <a href="gatos.html"><button type="button" class="btn  mt-5  fw-semibold " style="background-color:white ;">Información Gatos</button></a> </div>
+                <div class="col-lg-2"> <a href="perros.html"><button type="button"  class="btn  mt-5  fw-semibold myBtn" style="background-color:white ;">Información Perros</button></a> </div>
+                <div class="col-lg-2"> <a href="gatos.html"><button type="button" class="btn  mt-5  fw-semibold  myBtn" style="background-color:white ;">Información Gatos</button></a> </div>
 
             </div>
            
-          
-            
-                 
         </div>
+
     </div>
 
-      
+    <button id="topBtn" style="position:fixed; bottom:30px; right:30px;">Ir al Inicio</button>
 
+    
     <div class="container-fluid " style="margin:0 !important ;padding:0px !important;">
 
         <!-- Footer -->
@@ -211,16 +219,16 @@
                       style="width: 60px; background-color: #7c4dff; height: 2px"
                       />
                   <p>
-                    <a href="#" class="text-white">Home</a>
+                    <a href="#" class="text-white" >Home</a>
                   </p>
                   <p>
-                    <a href="#" class="text-white">Sobre nosotros</a>
+                    <a href="#" class="text-white" >Sobre nosotros</a>
                   </p>
                   <p>
-                    <a href="#" class="text-white">Adopta ¡YA! </a>
+                    <a href="#" class="text-white" >Adopta ¡YA! </a>
                   </p>
                   <p>
-                    <a href="#" class="text-white">Blog</a>
+                    <a href="#" class="text-white"   ">Blog</a>
                   </p>
                 </div>
                 <!-- Grid column -->
@@ -261,15 +269,101 @@
       
       </div>
 
+    </div>
+
       <script>
-        $("#myBtn").hover(
-  function() {
-    $(this).addClass("grow");
-  },
-  function() {
-    $(this).removeClass("grow");
-  }
-);
+        $(document).ready(function() {
+          $(".myBtn").hover(
+            function() {
+              $(this).addClass("grow");
+            },
+            function() {
+              $(this).removeClass("grow");
+            }
+          );
+
+
+          $("#myTitle").mouseover(function() {
+           
+          $("#myTitle").animate({
+            width: "450px",
+            color:"blue",
+            
+          }, 300);
+        });
+
+        $("#opcion1").mouseover(function() {
+          $(this).addClass("negrita");
+        });
+
+        $("#opcion2").mouseover(function() {
+          $(this).addClass("negrita");
+        });
+        $("#opcion3").mouseover(function() {
+          $(this).addClass("negrita");
+          
+        });
+
+        $("#opcion4").mouseover(function() {
+          $(this).addClass("negrita");
+        
+        });
+
+        $("#opcion5").mouseover(function() {
+          $(this).addClass("negrita");
+          
+        });
+
+        $("#opcion1").mouseout(function() {
+          $(this).removeClass("negrita");
+        });
+
+        $("#opcion2").mouseout(function() {
+          $(this).removeClass("negrita");
+        });
+
+        $("#opcion3").mouseout(function() {
+          $(this).removeClass("negrita");
+        });
+
+        $("#opcion4").mouseout(function() {
+          $(this).removeClass("negrita");
+        });
+        $("#opcion5").mouseout(function() {
+          $(this).removeClass("negrita");
+        });
+
+        $("#Contactos").mouseover(function() {
+          <!--Cambiar el fondo de color negro con letra blanca-->
+          $(this).css("background-color", "black");
+          $(this).css("color", "white");});
+
+          $("#Contactos").mouseout(function() {
+                  $(this).remove(css("background-color", "black"));
+                  $(this).remove(css("color", "white"));});
+
+          $("#topBtn").click(function() {
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+          });
+
+          $(".contenerdor").hide().fadeIn(3000)
+    
+
+          var images = ['imagenes/gallery-original-8.jpg', 'imagenes/gallery-original-1.jpg', 'imagenes/gallery-original-2.jpg'];
+          var i = 0;
+
+          function changeImg() {
+          $("#myImg").attr("src", images[i]);
+          i = (i + 1) % images.length;
+        }
+        setInterval(changeImg, 3000);
+
+
+      });
+
+
+  
 
       </script>
 
