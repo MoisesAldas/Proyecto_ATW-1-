@@ -17,7 +17,18 @@
         text-decoration: none !important;
     }
  </style>
- 
+       <script>
+        $(document).ready(function () {
+          $(".card-img-top").hover(
+            function () {
+              $(this).animate({ height: "300px", width: "300px" });
+            },
+            function () {
+              $(this).animate({ height: "200px", width: "200px" });
+            }
+          );
+        });
+        
 </head>
 <body>
   
@@ -268,6 +279,11 @@
             }
           );
         });
+        
       </script>
+      <script src="https://unpkg.com/scrollreveal"></script>
+      <script>
+        ScrollReveal().reveal('.card', { delay: 500 });
+      
 </body>
 </html>
