@@ -94,7 +94,7 @@ color: white;
                 
             </div>
             <div class="col-lg-6 col-10">
-                <img src="imagenes/header.jpg" class="img-fluid " alt="">
+                <img src="imagenes/header.jpg" class="img-fluid " alt="" id="myImg">
             </div>
            
         </div>
@@ -286,7 +286,7 @@ color: white;
           $("#myTitle").mouseover(function() {
            
           $("#myTitle").animate({
-            width: "550px",
+            width: "450px",
             color:"blue",
             
           }, 300);
@@ -348,8 +348,16 @@ color: white;
           });
 
           $(".contenerdor").hide().fadeIn(3000)
-                  
-  
+    
+
+          var images = ['imagenes/gallery-original-8.jpg', 'imagenes/gallery-original-1.jpg', 'imagenes/gallery-original-2.jpg'];
+          var i = 0;
+
+          function changeImg() {
+          $("#myImg").attr("src", images[i]);
+          i = (i + 1) % images.length;
+        }
+        setInterval(changeImg, 3000);
 
 
       });
