@@ -285,19 +285,7 @@
       <script src="https://unpkg.com/scrollreveal"></script>
       <script>
         ScrollReveal().reveal('.card', { delay: 500 });
+        ScrollReveal().reveal('footer', { delay: 500 });
       </script>
-      <!--Animate the footer with JQuery-->
-      <script>
-        $(document).ready(function () {
-          $("footer").hover(
-            function () {
-              $(this).animate({ height: "300px" });
-            },
-            function () {
-              $(this).animate({ height: "100px" });
-            }
-          );
-        });
-        </script>
 </body>
 </html>
