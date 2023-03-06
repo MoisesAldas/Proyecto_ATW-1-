@@ -56,6 +56,31 @@
       overflow: hidden;
 
     }
+
+    /*estilos form*/
+    .form {
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      resize: vertical;
+    }
+    .nombre{
+      width: 100%;
+      border-radius: 10px;
+    }
   </style>
   <script>
     $(document).ready(function() {
@@ -64,6 +89,16 @@
         $(this).css('color', '#b2e8f9')
       })
       $('#boton1').mouseout(function() {
+        $(this).css('background-color', '#b2e8f9')
+        $(this).css('color', 'black')
+      })
+    });
+    $(document).ready(function() {
+      $('#boton2').mouseover(function() {
+        $(this).css('background-color', 'black')
+        $(this).css('color', '#b2e8f9')
+      })
+      $('#boton2').mouseout(function() {
         $(this).css('background-color', '#b2e8f9')
         $(this).css('color', 'black')
       })
@@ -103,7 +138,6 @@
         }, "slow");
       });
     });
-
 
     $(document).ready(function() {
       $('#compartir').mouseover(function() {
@@ -281,15 +315,17 @@
           </p>
         </div>
         <div class="p-5 mx-5 my-5" style="background-color: #E8E8E8;">
-          <!-- Comentarios-->
-          <form  method="POST">
+          <!-- -----------------Comentarios ------------------- -->
+          <h3>Comentarios:</h3>
+          <form class="form" method="POST">
             <label for="nombre">Nombre:</label>
-            <br>
-            <input type="text" id="nombre" name="nombre">
-            <br>
+            <input type="text" class="nombre" id="nombre" name="nombre">
             <label for="comentario">Comentario:</label>
             <textarea id="comentario" name="comentario"></textarea>
-            <input type="submit"  id="boton1" value="Enviar" class="btn mt-4 fw-semibold " style="background-color:#b2e8f9 ;">
+            <center>
+            <input type="submit"  id="boton2" value="Enviar" class="text-center btn mt-4 fw-semibold " style="background-color:#b2e8f9 ;">
+            </center>
+            
           </form>
         </div>
       </div>
