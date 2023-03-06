@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -59,48 +58,44 @@
     }
   </style>
   <script>
-    $(document).ready(function () {
-      $('#boton1').mouseover(function () {
+    $(document).ready(function() {
+      $('#boton1').mouseover(function() {
         $(this).css('background-color', 'black')
         $(this).css('color', '#b2e8f9')
       })
-      $('#boton1').mouseout(function () {
+      $('#boton1').mouseout(function() {
         $(this).css('background-color', '#b2e8f9')
         $(this).css('color', 'black')
       })
     });
 
-    $(document).ready(function () {
-      $('#enner').mouseover(function () {
-        $(this).animate(
-          {
-            width: '200px'
-          }
-        );
+    $(document).ready(function() {
+      $('#enner').mouseover(function() {
+        $(this).animate({
+          width: '200px'
+        });
       });
-      $('#enner').mouseout(function () {
-        $(this).animate(
-          {
-            width: '150px'
-          }
-        );
+      $('#enner').mouseout(function() {
+        $(this).animate({
+          width: '150px'
+        });
       });
     });
 
 
-    $(document).ready(function () {
-      $('#frase').mouseover(function () {
+    $(document).ready(function() {
+      $('#frase').mouseover(function() {
         $(this).css('color', '#b2e8f9');
         $(this).css("font-size", "40px");
       });
-      $('#frase').mouseout(function () {
+      $('#frase').mouseout(function() {
         $(this).css('color', 'black');
         $(this).css("font-size", "29px");
       });
     });
 
-    $(document).ready(function () {
-      $("#boton1").click(function () {
+    $(document).ready(function() {
+      $("#boton1").click(function() {
         console.log("Lesly");
         $(".info").animate({
           height: "toggle",
@@ -110,14 +105,14 @@
     });
 
 
-    $(document).ready(function () {
-      $('#compartir').mouseover(function () {
+    $(document).ready(function() {
+      $('#compartir').mouseover(function() {
         $(this).css("font-size", "20px");
         $(this).css('background-color', '#b2e8f9');
         $(this).css("padding", "8px");
         $(this).css("border-radius", "10px");
       });
-      $('#compartir').mouseout(function () {
+      $('#compartir').mouseout(function() {
         $(this).css("font-size", "16px");
         $(this).css('background-color', 'white');
       });
@@ -130,8 +125,7 @@
   <nav class="navbar navbar-expand-lg px-4  " style="background-color:#b2e8f9 ;">
     <div class="container-fluid">
       <a class="navbar-brand " href="index.html"> <span class="fs-2 fw-bold" id="myTitle">AdoptME</span> </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -148,8 +142,7 @@
             <a class="nav-link active " href="About_us.html" id="opcion3">Sobre nosotros</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" id="opcion4" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <a class="nav-link dropdown-toggle active" href="#" id="opcion4" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Mascotas
             </a>
             <ul class="dropdown-menu">
@@ -161,8 +154,7 @@
         </ul>
         <form class="d-flex" role="search">
 
-          <a href="contact.html"><button type="button" class="btn   fw-semibold myBtn"
-              style="background-color:#b2e8f9 ;border-color: #151515;" id="Contactos">Contacto</button> </a>
+          <a href="contact.html"><button type="button" class="btn   fw-semibold myBtn" style="background-color:#b2e8f9 ;border-color: #151515;" id="Contactos">Contacto</button> </a>
         </form>
       </div>
 
@@ -242,8 +234,7 @@
         </p>
         <p id="compartir" class="mx-2 my-5 text-muted text-center">
           ¡Compartir esta publicación!
-          <a href="https://www.facebook.com/brandobermello.18?mibextid=LQQJ4d "><i
-              class="bi bi-facebook mx-2 text-muted "></i></a>
+          <a href="https://www.facebook.com/brandobermello.18?mibextid=LQQJ4d "><i class="bi bi-facebook mx-2 text-muted "></i></a>
           <a href="https://mobile.twitter.com/justinbieber"><i class="bi bi-twitter mx-2 text-muted "></i></a>
           <a href="https://www.instagram.com/justinbieber/"><i class="bi bi-instagram mx-2 text-muted"></i></a>
           <a href="https://www.google.com/"><i class="bi bi-google mx-2 text-muted"></i></a>
@@ -261,8 +252,7 @@
             protectoras, santuarios, reservas y cualquier evento o actividad relacionada.
           </p>
           <p id="redesK" class="mx-2 my-5 text-muted">
-            <a href="https://www.facebook.com/brandobermello.18?mibextid=LQQJ4d"><i
-                class="bi bi-facebook mx-2 text-muted "></i></a>
+            <a href="https://www.facebook.com/brandobermello.18?mibextid=LQQJ4d"><i class="bi bi-facebook mx-2 text-muted "></i></a>
             <a href="https://mobile.twitter.com/justinbieber"><i class="bi bi-twitter mx-2 text-muted "></i></a>
             <a href="https://www.instagram.com/justinbieber/"><i class="bi bi-instagram mx-2 text-muted"></i></a>
             <a href="https://www.google.com/"><i class="bi bi-google mx-2 text-muted"></i></a>
@@ -289,6 +279,15 @@
             peligro de extinción, la alimentación y la salud de los animales, y la defensa de los derechos de los
             animales.
           </p>
+          <!-- Comentarios-->
+          <form  method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+            <label for="comentario">Comentario:</label>
+            <textarea id="comentario" name="comentario"></textarea>
+            <input type="submit" value="Enviar" >
+          </form>
+
         </div>
       </div>
     </div>
@@ -402,57 +401,57 @@
   <script>
     //NAV
 
-    $("#opcion1").mouseover(function () {
+    $("#opcion1").mouseover(function() {
       $(this).addClass("negrita");
     });
 
-    $("#opcion2").mouseover(function () {
+    $("#opcion2").mouseover(function() {
       $(this).addClass("negrita");
     });
-    $("#opcion3").mouseover(function () {
-      $(this).addClass("negrita");
-
-    });
-
-    $("#opcion4").mouseover(function () {
+    $("#opcion3").mouseover(function() {
       $(this).addClass("negrita");
 
     });
 
-    $("#opcion5").mouseover(function () {
+    $("#opcion4").mouseover(function() {
       $(this).addClass("negrita");
 
     });
 
-    $("#opcion1").mouseout(function () {
+    $("#opcion5").mouseover(function() {
+      $(this).addClass("negrita");
+
+    });
+
+    $("#opcion1").mouseout(function() {
       $(this).removeClass("negrita");
     });
 
-    $("#opcion2").mouseout(function () {
+    $("#opcion2").mouseout(function() {
       $(this).removeClass("negrita");
     });
 
-    $("#opcion3").mouseout(function () {
+    $("#opcion3").mouseout(function() {
       $(this).removeClass("negrita");
     });
 
-    $("#opcion4").mouseout(function () {
+    $("#opcion4").mouseout(function() {
       $(this).removeClass("negrita");
     });
-    $("#opcion5").mouseout(function () {
+    $("#opcion5").mouseout(function() {
       $(this).removeClass("negrita");
     });
 
     $(".myBtn").hover(
-      function () {
+      function() {
         $(this).addClass("grow");
       },
-      function () {
+      function() {
         $(this).removeClass("grow");
       }
     );
 
-    $("#myTitle").mouseover(function () {
+    $("#myTitle").mouseover(function() {
 
       $("#myTitle").animate({
         width: "450px",
