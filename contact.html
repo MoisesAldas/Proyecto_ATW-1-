@@ -9,9 +9,11 @@
   <title>Contacto</title>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="procesar.php"></script>
   <link rel="stylesheet" href="bootstrap.min.css">
   <link rel="icon" type="image/png" sizes="32x32" href="imagenes/paw-print.ico">
 </head>
+
 <style>
   .validar {
     border: 2px solid red;
@@ -94,7 +96,7 @@
             <a class="nav-link active" aria-current="page" href="#" id="opcion1">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="blog.html" id="opcion2">Blog</a>
+            <a class="nav-link active" href="blog.php" id="opcion2">Blog</a>
           </li>
 
           <li class="nav-item">
@@ -228,8 +230,10 @@
         </div>
 
         <div class="d-grid mt-2 col-sm-4 col-xs-12 mx-auto">
-          <button class="btn btn-primary" type="button" id="Enviar">
-            Enviar
+          <button class="btn btn-primary" type="submit" form="formulario_validar"
+            formaction="guardar_datos.php">Enviar</button>
+
+          Enviar
           </button>
         </div>
       </div>
@@ -312,7 +316,7 @@
                 <a href="#" class="text-white">Adopta ¡YA! </a>
               </p>
               <p>
-                <a href="#" class="text-white" ">Blog</a>
+                <a href="blog.php" class="text-white" >Blog</a>
                       </p>
                     </div>
                     <!-- Grid column -->
@@ -496,7 +500,141 @@
 
       }, 300);
     });
+
+    //PHP
+    // Evento que se dispara al hacer clic en el botón "Enviar"
+    document.getElementById("Enviar").addEventListener("click", function () {
+      // Validación de campos
+      var nombre = document.getElementById("nombre").value;
+      var mensaje = document.getElementById("mensaje").value;
+      var edad = document.getElementById("edad").value;
+      var correo = document.getElementById("correo").value;
+      var contra = document.getElementById("contra").value;
+      var sexo = document.querySelector('input[name="sexo"]:checked');
+      var lugar = document.getElementById("lugar").value;
+
+      if (nombre == "") {
+        document.getElementById("mensaje1").style.display = "block";
+        return false;
+      } else {
+        document.getElementById("mensaje1").style.display = "none";
+      }
+
+      if (mensaje == "" || mensaje.length < 10) {
+        document.getElementById("mensaje2").style.display = "block";
+        return false;
+      } else {
+        document.getElementById("mensaje2").style.display = "none";
+      }
+
+      if (edad == "") {
+        document.getElementById("mensaje20").style.display = "block";
+        return false;
+      } else {
+        document.getElementById("mensaje20").style.display = "none";
+      }
+
+      if (correo == "") {
+        document.getElementById("mensaje4").style.display = "block";
+        return false;
+      } else {
+        document.getElementById("mensaje4").style.display = "none";
+      }
+
+      if (contra == "") {
+        document.getElementById("mensaje3").style.display = "block";
+        return false;
+      } else {
+        document.getElementById("mensaje3").style.display = "none";
+      }
+
+      if (!sexo) {
+        document.getElementById("mensaje6").style.display = "block";
+        return false;
+      } else {
+        document.getElementById("mensaje6").style.display = "none";
+      }
+
+      if (lugar == 0) {
+        document.getElementById("mensaje7").style.display = "block";
+        return false;
+      } else {
+        document.getElementById("mensaje7").style.display = "none";
+      }
+
+      // Envío de datos a través de AJAX
+      var xmlhttp;
+      if (window.XMLHttpRequest) {
+        // code for modern browsers
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // code for old IE browsers
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          // Respuesta del servidor
+          alert(this.responseText);
+        }
+      };
+      xmlhttp.open("POST", "guardar_datos.php", true);
+      xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xmlhttp.send(
+        "nombre=" +
+        nombre +
+        "&mensaje=" +
+        mensaje +
+        "&edad=" +
+        edad +
+        "&correo=" +
+        correo +
+        "&contra=" +
+        contra +
+        "&sexo=" +
+        sexo.value +
+        "&lugar=" +
+        lugar
+      );
+    });
+
+    // Función que se encarga de limpiar los campos del formulario
+    function limpiarFormulario() {
+      document.getElementById("nombre").value = "";
+      document.getElementById("mensaje").value = "";
+      document.getElementById("edad").value = "";
+      document.getElementById("correo").value = "";
+      document.getElementById("contra").value = "";
+      document.getElementById("hombre").checked = false;
+      document.getElementById("Mujer").checked = false;
+      document.getElementById("lugar").value = "0";
+      document.getElementById("mensaje1").style.display = "none";
+      document.getElementById("mensaje2").style.display = "none";
+    }
+
+    function validarFormulario() {
+      var nombre = document.getElementById("nombre").value;
+      var mensaje = document.getElementById("mensaje").value;
+      var edad = document.getElementById("edad").value;
+      var correo = document.getElementById("correo").value;
+      var contra = document.getElementById("contra").value;
+      var genero = document.querySelector('input[name="genero"]:checked');
+      var lugar = document.getElementById("lugar").value;
+      var mensaje1 = document.getElementById("mensaje1");
+      var mensaje2 = document.getElementById("mensaje2");
+
+      if (nombre === "" || mensaje === "" || edad === "" || correo === "" || contra === "" || genero === null || lugar === "0") {
+        mensaje1.style.display = "block";
+        mensaje2.style.display = "none";
+        return false;
+      } else {
+        mensaje1.style.display = "none";
+        mensaje2.style.display = "block";
+        return true;
+      }
+    }
+
   </script>
+
 </body>
 
 </html>
