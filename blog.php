@@ -1,3 +1,17 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $nombre = $_POST['nombre'];
+  $comentario = $_POST['comentario'];
+  $archivo = 'comentarios.txt';
+  $contenido = file_get_contents($archivo);
+  $contenido .= "\n$nombre: \n$comentario";
+  file_put_contents($archivo, $contenido);
+}
+$archivo = 'comentarios.txt';
+$contenido = file_get_contents($archivo);
+$comentarios = explode("\n", $contenido);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,7 +71,7 @@
 
     }
 
-    /*estilos form*/
+    /*estilos form comentarios*/
     .form {
       margin: 20px;
       padding: 20px;
@@ -77,9 +91,34 @@
       border-radius: 10px;
       resize: vertical;
     }
-    .nombre{
+
+    .nombre {
       width: 100%;
       border-radius: 10px;
+    }
+
+    hr {
+      margin: 20px 0;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+
+    .comentario {
+      margin: 0 20px 20px;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .comentario p {
+      margin: 0;
+    }
+
+    .comentario strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
     }
   </style>
   <script>
@@ -317,16 +356,23 @@
         <div class="p-5 mx-5 my-5" style="background-color: #E8E8E8;">
           <!-- -----------------Comentarios ------------------- -->
           <h3>Comentarios:</h3>
-          <form class="form" method="POST">
+          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form" method="POST">
             <label for="nombre">Nombre:</label>
             <input type="text" class="nombre" id="nombre" name="nombre">
             <label for="comentario">Comentario:</label>
             <textarea id="comentario" name="comentario"></textarea>
             <center>
-            <input type="submit"  id="boton2" value="Enviar" class="text-center btn mt-4 fw-semibold " style="background-color:#b2e8f9 ;">
+              <input type="submit" id="boton2" value="Enviar" class="text-center btn mt-4 fw-semibold " style="background-color:#b2e8f9 ;">
             </center>
-            
+
           </form>
+          <hr>
+          <h2>Comentarios:</h2>
+          <?php
+          foreach ($comentarios as $comentario) {
+            echo "<div class=\"comentario\"><strong>$comentario</strong></div>";
+          }
+          ?>
         </div>
       </div>
     </div>
