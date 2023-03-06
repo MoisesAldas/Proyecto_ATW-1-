@@ -1,3 +1,39 @@
+<?php
+// Verificamos si el formulario fue enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["comentario"])) {
+
+    // Obtenemos el comentario enviado por el usuario
+    $comentario = $_POST["comentario"];
+
+    // Creamos el archivo de texto si no existe
+    if (!file_exists("comentarios.txt")) {
+        fopen("comentarios.txt", "w");
+    }
+
+    // Abrimos el archivo en modo escritura y posicionamos el puntero al final del archivo
+    $archivo = fopen("comentarios.txt", "a");
+    fseek($archivo, 0, SEEK_END);
+
+    // Escribimos el comentario en el archivo
+    fwrite($archivo, $comentario . PHP_EOL);
+
+    // Cerramos el archivo
+    fclose($archivo);
+}
+
+// Leemos los comentarios del archivo y los mostramos en la página
+if (file_exists("comentarios.txt")) {
+    $archivo = fopen("comentarios.txt", "r");
+
+    while (!feof($archivo)) {
+        $linea = fgets($archivo);
+        echo "<p>$linea</p>";
+    }
+
+    fclose($archivo);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -198,6 +234,14 @@
                         </div>
                     </div>
                 </div>
+                <div>
+                    <h2>Deja tu comentario</h2>
+                    <form method="post">
+                        <textarea name="comentario" rows="4" cols="50"></textarea>
+                        <br>
+                        <input type="submit" value="Enviar">
+                    </form>
+                </div>
     </main>
     <section class="container-fluid">
         <div class="row p-4" style="background-color: #60BAD6">
@@ -222,7 +266,7 @@
         <div class="row bg-light p-4">
             <div class="col-sm-12 col-md-6 col-lg-6 mb-4 p-4">
                 <div class="container justify-content-center mb-4 p-4">
-                    <h1 class="text-dark">De que pueden disfutar por primer acceso</h1>
+                    <h1 class="text-dark">Disfruta de todos los beneficios</h1>
                     <p class="text-dark">En AdopMe estamos al tanto de que la limpieza de nuestras mascotas es
                         ideal y crucial no solo para el aspecto de estas, sino para prevenirlas de ciertas bacterias
                         que pueden causar diversos tipos de enfermedades en nuestras mascotas, nuestra tienda ofrece al
