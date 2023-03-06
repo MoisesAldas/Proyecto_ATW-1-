@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $comentario = $_POST['comentario'];
   $archivo = 'comentarios.txt';
   $contenido = file_get_contents($archivo);
-  $contenido .= "\n$nombre: \n$comentario";
+  $contenido .= "$nombre: $comentario";
   file_put_contents($archivo, $contenido);
 }
 $archivo = 'comentarios.txt';
@@ -74,9 +74,6 @@ $comentarios = explode("\n", $contenido);
     /*estilos form comentarios*/
     .form {
       margin: 20px;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
     }
 
     label {
@@ -104,9 +101,9 @@ $comentarios = explode("\n", $contenido);
     }
 
     .comentario {
-      margin: 0 20px 20px;
+      margin: 0 10px 10px;
       background-color: #fff;
-      padding: 10px;
+      padding: 5px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
@@ -355,7 +352,7 @@ $comentarios = explode("\n", $contenido);
         </div>
         <div class="p-5 mx-5 my-5" style="background-color: #E8E8E8;">
           <!-- -----------------Comentarios ------------------- -->
-          <h3>Comentarios:</h3>
+          <h4>Ingrese su comentarios:</h4>
           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form" method="POST">
             <label for="nombre">Nombre:</label>
             <input type="text" class="nombre" id="nombre" name="nombre">
@@ -367,7 +364,7 @@ $comentarios = explode("\n", $contenido);
 
           </form>
           <hr>
-          <h2>Comentarios:</h2>
+          <h4>Comentarios:</h4>
           <?php
           foreach ($comentarios as $comentario) {
             echo "<div class=\"comentario\"><strong>$comentario</strong></div>";
