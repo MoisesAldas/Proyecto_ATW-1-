@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $comentario = $_POST['comentario'];
   $archivo = 'comentarios.txt';
   $contenido = file_get_contents($archivo);
-  $contenido .= "$nombre: $comentario";
+  $contenido .= "\n$nombre: $comentario";
   file_put_contents($archivo, $contenido);
 }
 $archivo = 'comentarios.txt';
