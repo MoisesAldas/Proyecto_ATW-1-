@@ -1,0 +1,287 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lexend Deca' , sans-serif;
+}
+.header{
+   position: fixed;
+   width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    background-color: black;
+    justify-content: space-around;
+    align-content: center;
+}
+.header > div{
+    
+    color: white;
+    padding: 14px;
+  
+}
+.header > div>a{
+    
+    color: white;
+    padding: 14px;
+  font-size: 16px;
+  
+}
+
+  
+  
+
+.contacto{
+    margin-right: 20px;
+}
+
+.header > div>a:hover{
+    background-color: rgb(238, 108, 26);
+    text-decoration: none;
+   color: white;
+}
+.header > div>a{
+    text-decoration: none;
+   color: white;
+
+}
+.logo{
+    color:rgb(238, 108, 26); 
+    font-weight: bold;
+    font-family: 'Cinzel', serif !important ; 
+}
+
+.contenedorimg{
+    background: url(imagenes/galapagos.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 800px;
+    
+}
+.texto
+{
+   
+    color: white;
+    text-align: center;
+    font-size: 30px;
+   
+  
+}
+.btnempezar{
+    background: black;
+    width: 200px;
+    border-radius: 3px;
+   padding: 10px;
+   padding-left: 20px;
+   padding-right: 20px;
+   font-size: 16px;
+   text-decoration: none;
+   color: white;
+    
+}
+a{
+    text-decoration: none;
+}
+h5:hover{
+    background-color: rgb(238, 108, 26);
+}
+.btnempezar:hover{
+    background-color: rgb(238, 108, 26);
+}
+.servicios{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 10px;
+    justify-content: center;
+    
+}
+
+.actividades{
+    padding: 20px;
+    margin-top: 70px;
+    justify-content: center;
+  
+}
+.servicios>div{
+    padding: 80px;
+    text-align: center;
+}
+.servicios>div>h3{
+    margin: 20px;
+   
+}
+
+.txtbienvenidosT{
+    font-size: 70px;
+    font-family: 'Cinzel', serif !important;
+}
+.txtbienvenidosp{
+    font-size: 20px;
+}
+
+.recorridos{
+   margin-bottom: 100px;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+
+}
+.footer{
+    padding: 25px;
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 360px auto auto auto;
+    justify-content: space-around;
+    
+    padding-bottom: 30px;
+    
+
+}
+.footer a{
+    color: black;
+    
+}
+ul li{
+    list-style-type: none;
+    color: black;
+    padding: 3px;
+}
+.fttitulo{
+    margin-bottom: 30px;
+    color: rgb(238, 108, 26);
+    text-align:left;
+
+   
+    
+}
+.redes{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    align-content: flex-start;
+    justify-content: center;
+    column-gap: 30px;
+    width: 100%;
+}
+.contenedorabout{
+    background: url(imagenes/about.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 560px;
+}
+.informacion{
+    display: grid;
+    grid-template-columns: auto auto ;
+    padding: 50px;
+    text-align: center;
+    padding-right: 180px;
+    padding-left: 180px;
+    row-gap: 60px;
+    margin-top:20px ;
+    margin-bottom: 20px;
+}
+.infoimg1{
+    float: left;
+    background-size: cover;
+    width: 400px;
+    height: 270px;
+    margin: auto;
+    padding: auto;
+}
+.infoimg2{
+    float: right;
+    background-size: cover;
+    width: 450px;
+    height: 300px;
+   
+}
+
+.txtempleados{
+    padding: 10px;
+}
+.txtinsta{
+    padding: 10px;
+}
+.servicios2{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 40px;
+    column-gap: 20px;
+    justify-content: center;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+.serviciosimg{
+    width: 200px;
+    height: 200px;
+}
+.equipo{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-left: 120px;
+    padding-right: 120px;
+    justify-content: center;  
+    
+    align-items: center;
+}
+.patton{
+    padding: 38px;
+    padding-top: 11px;
+}
+.barton{
+    padding: 40px;
+}
+.brooks{
+    padding: 40px;
+    padding-top: 11px;
+}
+.formregistro{
+    display: block;
+    padding: 100px;
+    width: 700px;
+    justify-content: center;
+    margin: auto;
+    
+   
+}
+.select-tarjeta{
+    padding: 100px;
+    width: 100px;
+}
+.inputs{
+    width: 96%;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+
+.formregistro label{
+    display: block;
+}
+.btnPage{
+    background-color: #b2e8f9;
+    border: 1px solid  #b2e8f9;
+    padding: 20px;
+    padding-right: 60px;
+    padding-left: 60px;
+    width: 485px ;
+}
+.inpus2{
+    width: 96.0%;
+}
+.imgtarjeta{
+    width: 40px;
+    height: 25px;
+    margin: 3px;
+}
