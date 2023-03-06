@@ -279,15 +279,18 @@
             peligro de extinción, la alimentación y la salud de los animales, y la defensa de los derechos de los
             animales.
           </p>
+        </div>
+        <div class="p-5 mx-5 my-5" style="background-color: #E8E8E8;">
           <!-- Comentarios-->
           <form  method="POST">
             <label for="nombre">Nombre:</label>
+            <br>
             <input type="text" id="nombre" name="nombre">
+            <br>
             <label for="comentario">Comentario:</label>
             <textarea id="comentario" name="comentario"></textarea>
-            <input type="submit" value="Enviar" >
+            <input type="submit"  id="boton1" value="Enviar" class="btn mt-4 fw-semibold " style="background-color:#b2e8f9 ;">
           </form>
-
         </div>
       </div>
     </div>
