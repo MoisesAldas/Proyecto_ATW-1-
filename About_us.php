@@ -130,10 +130,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#" id="opcion1">Home</a>
+                            <a class="nav-link active" aria-current="page" href="index.html" id="opcion1">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="blog.html" id="opcion2">Blog</a>
+                            <a class="nav-link active" href="blog.php" id="opcion2">Blog</a>
                         </li>
 
                         <li class="nav-item">

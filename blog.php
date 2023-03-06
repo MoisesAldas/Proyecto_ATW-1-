@@ -1,3 +1,17 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $nombre = $_POST['nombre'];
+  $comentario = $_POST['comentario'];
+  $archivo = 'comentarios.txt';
+  $contenido = file_get_contents($archivo);
+  $contenido .= "\n$nombre: $comentario";
+  file_put_contents($archivo, $contenido);
+}
+$archivo = 'comentarios.txt';
+$contenido = file_get_contents($archivo);
+$comentarios = explode("\n", $contenido);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,6 +70,53 @@
       overflow: hidden;
 
     }
+
+    /*estilos form comentarios*/
+    .form {
+      margin: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      resize: vertical;
+    }
+
+    .nombre {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    hr {
+      margin: 20px 0;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+
+    .comentario {
+      margin: 0 10px 10px;
+      background-color: #fff;
+      padding: 5px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .comentario p {
+      margin: 0;
+    }
+
+    .comentario strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+    }
   </style>
   <script>
     $(document).ready(function() {
@@ -64,6 +125,16 @@
         $(this).css('color', '#b2e8f9')
       })
       $('#boton1').mouseout(function() {
+        $(this).css('background-color', '#b2e8f9')
+        $(this).css('color', 'black')
+      })
+    });
+    $(document).ready(function() {
+      $('#boton2').mouseover(function() {
+        $(this).css('background-color', 'black')
+        $(this).css('color', '#b2e8f9')
+      })
+      $('#boton2').mouseout(function() {
         $(this).css('background-color', '#b2e8f9')
         $(this).css('color', 'black')
       })
@@ -104,7 +175,6 @@
       });
     });
 
-
     $(document).ready(function() {
       $('#compartir').mouseover(function() {
         $(this).css("font-size", "20px");
@@ -132,14 +202,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#" id="opcion1">Home</a>
+            <a class="nav-link active" aria-current="page" href="index.html" id="opcion1">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="blog.html" id="opcion2">Blog</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active " href="About_us.html" id="opcion3">Sobre nosotros</a>
+            <a class="nav-link active " href="About_us.php" id="opcion3">Sobre nosotros</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active" href="#" id="opcion4" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -281,16 +351,25 @@
           </p>
         </div>
         <div class="p-5 mx-5 my-5" style="background-color: #E8E8E8;">
-          <!-- Comentarios-->
-          <form  method="POST">
+          <!-- -----------------Comentarios ------------------- -->
+          <h4>Ingrese su comentarios:</h4>
+          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form" method="POST">
             <label for="nombre">Nombre:</label>
-            <br>
-            <input type="text" id="nombre" name="nombre">
-            <br>
+            <input type="text" class="nombre" id="nombre" name="nombre">
             <label for="comentario">Comentario:</label>
             <textarea id="comentario" name="comentario"></textarea>
-            <input type="submit"  id="boton1" value="Enviar" class="btn mt-4 fw-semibold " style="background-color:#b2e8f9 ;">
+            <center>
+              <input type="submit" id="boton2" value="Enviar" class="text-center btn mt-4 fw-semibold " style="background-color:#b2e8f9 ;">
+            </center>
+
           </form>
+          <hr>
+          <h4>Comentarios:</h4>
+          <?php
+          foreach ($comentarios as $comentario) {
+            echo "<div class=\"comentario\"><strong>$comentario</strong></div>";
+          }
+          ?>
         </div>
       </div>
     </div>
