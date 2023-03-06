@@ -351,7 +351,7 @@ $comentarios = explode("\n", $contenido);
           </p>
         </div>
         <div class="p-5 mx-5 my-5" style="background-color: #E8E8E8;">
-          <!-- -----------------Comentarios ------------------- -->
+          <!-- ---------------- COMENTARIOS ------------------- -->
           <h4>Ingrese su comentarios:</h4>
           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form" method="POST">
             <label for="nombre">Nombre:</label>
@@ -368,6 +368,30 @@ $comentarios = explode("\n", $contenido);
           <?php
           foreach ($comentarios as $comentario) {
             echo "<div class=\"comentario\"><strong>$comentario</strong></div>";
+          }
+          ?>
+        </div>
+
+        <div class="p-5 mx-5 my-5" style="background-color: #E8E8E8;">
+          <!-- ----------------- GALERÍA ------------------- -->
+          <h4 class="text-center">Fotos de perritos graciosas</h4>
+
+          <?php
+          // Obtener los datos de la API en formato JSON
+          $data = file_get_contents("https://dog.ceo/api/breeds/image/random");
+
+          // Convertir los datos JSON a un array de PHP
+          $resultado = json_decode($data, true);
+
+          // Acceder a los datos
+          if ($resultado['status'] == "success") {
+            $imagenUrl = $resultado['message'];
+            echo "<div class='contenedorPerro'>";
+            echo "<img id='imagen' src='$imagenUrl' class='imagenPerro'>";
+            echo "<button id='cambiar-imagen' class='text-center btn mt-4 fw-semibold' style='background-color:#b2e8f9;' >Cambiar imagen</button>";
+            echo "</div>";
+          } else {
+            echo "Ha ocurrido un error al obtener la imagen de perro";
           }
           ?>
         </div>
