@@ -350,6 +350,20 @@ $comentarios = explode("\n", $contenido);
             animales.
           </p>
         </div>
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+          $nombre = $_POST['nombre'];
+          $comentario = $_POST['comentario'];
+          $archivo = 'comentarios.txt';
+          $contenido = file_get_contents($archivo);
+          $contenido .= "\n$nombre: $comentario";
+          file_put_contents($archivo, $contenido);
+        }
+        $archivo = 'comentarios.txt';
+        $contenido = file_get_contents($archivo);
+        $comentarios = explode("\n", $contenido);
+        ?>
+
         <div class="p-5 mx-5 my-5" style="background-color: #E8E8E8;">
           <!-- ---------------- COMENTARIOS ------------------- -->
           <h4>Ingrese su comentarios:</h4>
@@ -375,15 +389,10 @@ $comentarios = explode("\n", $contenido);
         <div class="p-5 mx-5 my-5" style="background-color: #E8E8E8;">
           <!-- ----------------- GALERÍA ------------------- -->
           <h4 class="text-center">Fotos de perritos graciosas</h4>
-
           <?php
-          // Obtener los datos de la API en formato JSON
           $data = file_get_contents("https://dog.ceo/api/breeds/image/random");
 
-          // Convertir los datos JSON a un array de PHP
           $resultado = json_decode($data, true);
-
-          // Acceder a los datos
           if ($resultado['status'] == "success") {
             $imagenUrl = $resultado['message'];
             echo "<div class='contenedorPerro'>";
