@@ -1,8 +1,2 @@
-Kevin|ksazua@espe.edu.ec|0992972224|Calle 15|perro|Porque si
-Kevin 2|ksazua@espe.edu.ec|0992972224|Calle 15|perro|Porque si
-Alejo||0992972224|Calle 15|perro|ee
-Alejo||0992972224|Calle 15|perro|ee
-Kevin|ksazua@espe.edu.ec|0992972224|Calle 15|perro|eeeee
-|ksazua@espe.edu.ec|0992972224|Calle 15|perro|eeeee
-|ksazua@espe.edu.ec|0992972224|Calle 15||
-Kevin|ksazua@espe.edu.ec|0992972224|Calle 15|perro|Quiero
+Kevin|ksazua@espe.edu.ec|0992972224|Calle 15|perro|Prueba
+Alejandro Fajardo|vfajardo@espe.edu.ec|0992972223|St domingo|gato|Necesito alguien que me acompañe
