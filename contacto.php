@@ -95,14 +95,11 @@
             <a class="nav-link active" aria-current="page" href="#" id="opcion1">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="blog.php" id="opcion2">Blog</a>
+            <a class="nav-link active" href="blog.html" id="opcion2">Blog</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active " href="About_us.php" id="opcion3">Sobre nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active "href="modulopagos.html" id="opcion4">Donaciones</a>
+            <a class="nav-link active " href="About_us.html" id="opcion3">Sobre nosotros</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active" href="#" id="opcion4" role="button" data-bs-toggle="dropdown"
@@ -118,7 +115,7 @@
         </ul>
         <form class="d-flex" role="search">
 
-          <a href="contact.html"><button type="button" class="btn   fw-semibold myBtn"
+          <a href="contacto.php"><button type="button" class="btn   fw-semibold myBtn"
               style="background-color:#b2e8f9 ;border-color: #151515;" id="Contactos">Contacto</button> </a>
         </form>
       </div>
@@ -156,7 +153,7 @@
     </div>
   </div>
   <!--FORMULARIO-->
-  <form action="guardar_datos.php" id="formulario_validar" method="POST">
+  <form action="contacto.php" id="" method="POST">
     <div class="container" style="padding: 40px; background-color: rgb(229, 234, 235);">
       <form action="" id="formulario_validar">
 
@@ -189,7 +186,7 @@
             </div>
             <div class="form-group">
               <label for="">Contraseña</label>
-              <input type="password" class="form-control mt-1" placeholder="Contraseña" id="contra" />
+              <input type="password" class="form-control mt-1" placeholder="contra" id="contra" name="contra"/>
               <div class="error" id="mensaje3">Ingrese su contraseña</div>
             </div>
 
@@ -198,13 +195,13 @@
                 <label for="">Eliga su sexo:</label>
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input type="radio" name="sexo" id="sexo" class="form-check-input mr-2 " />
+                    <input type="radio" name="sexo" id="sexo" value="Hombre"class="form-check-input mr-2 " />
                     Hombre
                   </label>
                 </div>
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input type="radio" name="sexo" id="sexo" class="form-check-input mr-2 " />
+                    <input type="radio" name="sexo" id="sexo" value="Mujer" class="form-check-input mr-2 " />
                     Mujer
                   </label>
                   <div class="error" id="mensaje">Escoja el sexo</div>
@@ -216,11 +213,11 @@
 
                   <select name="lugar" id="lugar" class="form-control form-select ">
                     <option value="0">Seleccione una opcion</option>
-                    <option value="1">Ecuador</option>
-                    <option value="2">Venezuela</option>
-                    <option value="3">Colombia</option>
+                    <option value="Ecuador">Ecuador</option>
+                    <option value="Venezuela">Venezuela</option>
+                    <option value="Colombia">Colombia</option>
                   </select>
-                  <div class="error" id="mensaje">Escoja UN PAIS</div>
+                  <div class="error" id="mensaje">Escoja un pais </div>
                 </div>
               </div>
             </div>
@@ -234,7 +231,7 @@
           </div>
 
           <div class="d-grid mt-2 col-sm-4 col-xs-12 mx-auto">
-            <input class="btn btn-primary" type="submit" name="enviar" value="Enviar" formaction="guardar_datos.php">
+            <input class="btn btn-primary" type="submit" name="enviar" value="Enviar" formaction="contacto.php">
             </button>
           </div>
         </div>
@@ -302,7 +299,6 @@
 
               <!-- Grid column -->
 
-<<<<<<< HEAD
               <!-- Grid column -->
               <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                 <!-- Links -->
@@ -320,29 +316,6 @@
                 </p>
                 <p>
                   <a href="#" class="text-white" ">Blog</a>
-=======
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-              <!-- Links -->
-              <h6 class="text-uppercase fw-bold">Navegación</h6>
-              <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color: #7c4dff; height: 2px" />
-              <p>
-                <a href="#" class="text-white">Home</a>
-              </p>
-              <p>
-                <a href="#" class="text-white">Sobre nosotros</a>
-              </p>
-              <p>
-                <a href="#" class="text-white">Adopta ¡YA! </a>
-              </p>
-              <p>
-                <a href="blog.php" class="text-white" >Blog</a>
->>>>>>> 6f218e34b8b52fc08e47f8d299792d9fe8507f10
                       </p>
                     </div>
                     <!-- Grid column -->
@@ -534,3 +507,27 @@
 </body>
 
 </html>
+<?php
+		if($_SERVER["REQUEST_METHOD"] == "POST") {
+			$nombre = $_POST["nombre"];
+            $mensaje = $_POST["mensaje"];
+			$edad = $_POST["edad"];
+            $correo = $_POST["correo"];
+            $contra = str_replace(",", ".", $_POST["contra"]);
+            $sexo = $_POST["sexo"];
+            $lugar = $_POST["lugar"];
+
+            $correo_limpio = str_replace(",", ".", $correo);
+
+			// Abre el archivo en modo "a" (append) para agregar datos al final del archivo
+			$archivo = fopen("datosCT.txt", "a");
+
+			// Escribe los datos en el archivo separados por comas
+			fwrite($archivo, "$nombre,$mensaje,$edad,$correo_limpio,$contra,$sexo,$lugar\n");
+
+			// Cierra el archivo
+			fclose($archivo);
+
+			echo "<p>Los datos se han registrado correctamente.</p>";
+		}
+	?>

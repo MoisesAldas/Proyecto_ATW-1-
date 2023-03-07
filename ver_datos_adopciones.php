@@ -12,7 +12,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-        	<style>
         /*
         Estilos del nav
         */
@@ -142,7 +141,7 @@ color: white;
                     <a class="nav-link active" aria-current="page" href="#" id="opcion1">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="blog.html" id="opcion2">Blog</a>
+                    <a class="nav-link active" href="blog.php" id="opcion2">Blog</a>
                   </li>
 
                 
@@ -166,7 +165,7 @@ color: white;
                 </ul>
                 <form class="d-flex" role="search">
                  
-                  <a href="contact.html"><button type="button" class="btn   fw-semibold myBtn" style="background-color:#b2e8f9 ;border-color: #151515;" id="Contactos">Contacto</button> </a>
+                  <a href="contacto.php"><button type="button" class="btn   fw-semibold myBtn" style="background-color:#b2e8f9 ;border-color: #151515;" id="Contactos">Contacto</button> </a>
                 </form>
               </div>
 
@@ -298,7 +297,7 @@ color: white;
                     <a href="#" class="text-white" >Adopta ¡YA! </a>
                   </p>
                   <p>
-                    <a href="blog.php" class="text-white"   ">Blog</a>
+                    <a href="blog.php" class="text-white" >Blog</a>
                   </p>
                 </div>
                 <!-- Grid column -->
