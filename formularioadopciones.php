@@ -133,6 +133,7 @@ color: white;
 			padding: 20px;
 			margin: 50px auto;
 			max-width: 770px;
+            
 		}
 		label {
 			display: block;
