@@ -398,12 +398,22 @@
         <div class="p-5 mx-5 my-5" style="background-color: #E8E8E8;">
           <?php
           if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $nombre = $_POST['nombre'];
-            $comentario = $_POST['comentario'];
+            if (isset($_POST['nombre'])) {
+              $nombre = $_POST['nombre'];
+            } else {
+              $nombre = '';
+            }
+            if (isset($_POST['comentario'])) {
+              $comentario = $_POST['comentario'];
+            } else {
+              $comentario = '';
+            }
             $archivo = 'comentarios.txt';
             $contenido = file_get_contents($archivo);
-            $contenido .= "\n$nombre: $comentario";
-            file_put_contents($archivo, $contenido);
+            if (!empty($nombre) && !empty($comentario)) {
+              $contenido .= "\n$nombre: $comentario";
+              file_put_contents($archivo, $contenido);
+            }
           }
           $archivo = 'comentarios.txt';
           $contenido = file_get_contents($archivo);
@@ -424,9 +434,12 @@
           <h4>Comentarios:</h4>
           <?php
           foreach ($comentarios as $comentario) {
-            echo "<div class=\"comentario\"><strong>$comentario</strong></div>";
+            if (!empty($comentario)) {
+              echo "<div class=\"comentario\"><strong>$comentario</strong></div>";
+            }
           }
           ?>
+
         </div>
         <!-- ----------------- GALERÍA ------------------- -->
         <div class="p-5 mx-5 my-5" style="background-color: #E8E8E8;">
