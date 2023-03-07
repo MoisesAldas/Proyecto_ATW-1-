@@ -267,7 +267,7 @@
         </ul>
         <form class="d-flex" role="search">
 
-          <a href="contact.html"><button type="button" class="btn   fw-semibold myBtn" style="background-color:#b2e8f9 ;border-color: #151515;" id="Contactos">Contacto</button> </a>
+          <a href="contacto.php"><button type="button" class="btn   fw-semibold myBtn" style="background-color:#b2e8f9 ;border-color: #151515;" id="Contactos">Contacto</button> </a>
         </form>
       </div>
 
@@ -597,7 +597,7 @@
               <a href="About_us.html" class="text-white">Sobre nosotros</a>
             </p>
             <p>
-              <a href="contact.html" class="text-white">Adopta ¡YA! </a>
+              <a href="contacto.php" class="text-white">Adopta ¡YA! </a>
             </p>
             <p>
               <a href="blog.php" class="text-white">Blog</a>

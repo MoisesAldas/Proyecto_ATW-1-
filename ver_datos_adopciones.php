@@ -137,7 +137,7 @@ color: white;
                 </ul>
                 <form class="d-flex" role="search">
                  
-                  <a href="contact.html"><button type="button" class="btn   fw-semibold myBtn" style="background-color:#b2e8f9 ;border-color: #151515;" id="Contactos">Contacto</button> </a>
+                  <a href="contacto.php"><button type="button" class="btn   fw-semibold myBtn" style="background-color:#b2e8f9 ;border-color: #151515;" id="Contactos">Contacto</button> </a>
                 </form>
               </div>
 
