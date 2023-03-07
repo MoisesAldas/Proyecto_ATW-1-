@@ -220,7 +220,7 @@ color: white;
                     <a class="nav-link active" aria-current="page" href="#" id="opcion1">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="blog.html" id="opcion2">Blog</a>
+                    <a class="nav-link active" href="blog.php" id="opcion2">Blog</a>
                   </li>
                 
                   <li class="nav-item">
@@ -387,7 +387,7 @@ color: white;
                     <a href="#" class="text-white" >Adopta ¡YA! </a>
                   </p>
                   <p>
-                    <a href="blog.php" class="text-white"   ">Blog</a>
+                    <a href="blog.php" class="text-white">Blog</a>
                   </p>
                 </div>
                 <!-- Grid column -->
