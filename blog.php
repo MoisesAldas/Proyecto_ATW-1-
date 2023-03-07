@@ -57,7 +57,7 @@
 
     }
 
-    /*estilos form comentarios y perritos*/
+    /*estilos form comentarios, perritos y encuesta*/
     .form {
       margin: 20px;
     }
@@ -122,6 +122,22 @@
       padding-top: 10px;
 
     }
+
+    .barra {
+      background-color: #ddd;
+      height: 20px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .barra .progreso {
+      background-color: #4CAF50;
+      height: 100%;
+      border-radius: 10px;
+      text-align: center;
+      color: white;
+    }
   </style>
   <script>
     $(document).ready(function() {
@@ -152,6 +168,16 @@
         $(this).css('color', '#b2e8f9')
       })
       $('.boton3').mouseout(function() {
+        $(this).css('background-color', '#b2e8f9')
+        $(this).css('color', 'black')
+      })
+    });
+    $(document).ready(function() {
+      $('.boton4').mouseover(function() {
+        $(this).css('background-color', 'black')
+        $(this).css('color', '#b2e8f9')
+      })
+      $('.boton4').mouseout(function() {
         $(this).css('background-color', '#b2e8f9')
         $(this).css('color', 'black')
       })
@@ -420,6 +446,72 @@
           }
           ?>
         </div>
+        <!-- ----------------- ENCUESTA ------------------- -->
+        <div class="p-5 mx-5 my-5" style="background-color: #E8E8E8;">
+          <h4>Encuesta</h4>
+          <form method="post" action="" class="form">
+            <p>¿Qué prefieres los perros o los gatos?</p>
+            <input type="radio" name="mascota" value="perro"> Perros<br>
+            <input type="radio" name="mascota" value="gato"> Gatos<br>
+            <input type="submit" name="submit" value="Votar" class="boton4 text-center btn mt-4 fw-semibold " style="background-color:#b2e8f9 ;">
+          </form>
+
+          <?php
+          if (isset($_POST['submit'])) {
+            // Verificar si se ha seleccionado una mascota
+            if (isset($_POST['mascota'])) {
+              // Obtener la mascota seleccionada
+              $mascota = $_POST['mascota'];
+              // Guardar la selección del usuario en un archivo de texto
+              $archivo = fopen("votos.txt", "a");
+              fwrite($archivo, $mascota . "\n");
+              fclose($archivo);
+              // Mostrar un mensaje de confirmación
+              echo "<p>Gracias por votar. Tu selección ha sido registrada.</p>";
+            } else {
+              // Mostrar un mensaje de error si no se ha seleccionado una mascota
+              echo "<p>Por favor, selecciona una mascota antes de votar.</p>";
+            }
+          }
+
+          // Obtener los votos registrados en el archivo de texto
+          $votos = file("votos.txt", FILE_IGNORE_NEW_LINES);
+          // Contar el número de votos para cada mascota
+          $num_perros = 0;
+          $num_gatos = 0;
+          foreach ($votos as $voto) {
+            if ($voto == "perro") {
+              $num_perros++;
+            } elseif ($voto == "gato") {
+              $num_gatos++;
+            }
+          }
+          // Calcular el porcentaje de votos para cada mascota
+          $total_votos = count($votos);
+          if ($total_votos > 0) {
+            $porcentaje_perros = round(($num_perros / $total_votos) * 100, 2);
+            $porcentaje_gatos = round(($num_gatos / $total_votos) * 100, 2);
+          } else {
+            $porcentaje_perros = 0;
+            $porcentaje_gatos = 0;
+          }
+          // Mostrar las estadísticas de la encuesta
+          echo "<h2>Estadísticas de la encuesta</h2>";
+          echo "<p>Total de votos: " . $total_votos . "</p>";
+          echo "<p>Porcentaje de votos para perros: " . $porcentaje_perros . "%</p>";
+          echo "<div class='barra'>";
+          echo "<div class='progreso' style='width: " . $porcentaje_perros . "%;'>";
+          echo $porcentaje_perros . "%";
+          echo "</div>";
+          echo "</div>";
+          echo "<p>Porcentaje de votos para gatos: " . $porcentaje_gatos . "%</p>";
+          echo "<div class='barra'>";
+          echo "<div class='progreso' style='width: " . $porcentaje_gatos . "%;'>";
+          echo $porcentaje_gatos . "%";
+          echo "</div>";
+          echo "</div>";
+          ?>
+        </div>
       </div>
     </div>
   </div>
@@ -590,7 +682,7 @@
 
       }, 300);
     });
-    
+
     // Obtener el botón y la imagen
     const botonCambiarImagen = document.getElementById("cambiar-imagen");
     const imagen = document.getElementById("imagen");
