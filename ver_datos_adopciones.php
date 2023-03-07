@@ -354,4 +354,117 @@ const contador = document.querySelector('#contador');
 contador.textContent = `Total de personas registradas: ${numRows}`;
 table.insertAdjacentElement('afterend', contador);
 </script>
+<script>
+
+
+
+$(document).ready(function () {
+
+
+  $("#myTitleM").hover(function () {
+    $(this).addClass("grow");
+
+  },
+    function () {
+      $(this).removeClass("grow");
+    })
+
+
+
+
+  $(".myBtn").hover(
+    function () {
+      $(this).addClass("grow");
+    },
+    function () {
+      $(this).removeClass("grow");
+    }
+  );
+
+
+  $("#myTitle").mouseover(function () {
+
+    $("#myTitle").animate({
+      width: "450px",
+      color: "blue",
+
+    }, 300);
+  });
+
+  $("#opcion1").mouseover(function () {
+    $(this).addClass("negrita");
+  });
+
+  $("#opcion2").mouseover(function () {
+    $(this).addClass("negrita");
+  });
+  $("#opcion3").mouseover(function () {
+    $(this).addClass("negrita");
+
+  });
+
+  $("#opcion4").mouseover(function () {
+    $(this).addClass("negrita");
+
+  });
+
+  $("#opcion5").mouseover(function () {
+    $(this).addClass("negrita");
+
+  });
+
+  $("#opcion1").mouseout(function () {
+    $(this).removeClass("negrita");
+  });
+
+  $("#opcion2").mouseout(function () {
+    $(this).removeClass("negrita");
+  });
+
+  $("#opcion3").mouseout(function () {
+    $(this).removeClass("negrita");
+  });
+
+  $("#opcion4").mouseout(function () {
+    $(this).removeClass("negrita");
+  });
+  $("#opcion5").mouseout(function () {
+    $(this).removeClass("negrita");
+  });
+
+  $("#Contactos").mouseover(function () {
+    <!--Cambiar el fondo de color negro con letra blanca-->
+    $(this).css("background-color", "black");
+    $(this).css("color", "white");
+  });
+
+  $("#Contactos").mouseout(function () {
+    $(this).remove(css());
+    ;
+  });
+
+  $("#topBtn").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    return false;
+  });
+
+  $(".contenerdor").hide().fadeIn(2000)
+
+
+  var images = ['imagenes/gallery-original-8.jpg', 'imagenes/gallery-original-1.jpg', 'imagenes/gallery-original-2.jpg'];
+  var i = 0;
+
+  function changeImg() {
+    $("#myImg").attr("src", images[i]);
+    i = (i + 1) % images.length;
+  }
+  setInterval(changeImg, 3000);
+
+  $("#braili").slideDown(3000);
+
+  $(".perro1").hide().mouseover().fadeIn(5000);
+
+});
+
+</script>
 </html>
