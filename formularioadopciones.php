@@ -539,7 +539,7 @@ $(document).ready(function () {
   });
 
   $("#Contactos").mouseover(function () {
-    <!--Cambiar el fondo de color negro con letra blanca-->
+
     $(this).css("background-color", "black");
     $(this).css("color", "white");
   });
