@@ -1,1 +1,2 @@
 Moises,ningunnuevo,21,alejandro@espe.com,1234,Hombre,Venezuela
+Ana,otro gato,22,anamaria@espe.ec.com,Al123,Mujer,Ecuador

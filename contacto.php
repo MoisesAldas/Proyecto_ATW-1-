@@ -115,7 +115,7 @@
         </ul>
         <form class="d-flex" role="search">
 
-          <a href="contact.html"><button type="button" class="btn   fw-semibold myBtn"
+          <a href="contacto.php"><button type="button" class="btn   fw-semibold myBtn"
               style="background-color:#b2e8f9 ;border-color: #151515;" id="Contactos">Contacto</button> </a>
         </form>
       </div>
@@ -217,7 +217,7 @@
                     <option value="Venezuela">Venezuela</option>
                     <option value="Colombia">Colombia</option>
                   </select>
-                  <div class="error" id="mensaje">Escoja UN PAIS</div>
+                  <div class="error" id="mensaje">Escoja un pais </div>
                 </div>
               </div>
             </div>
