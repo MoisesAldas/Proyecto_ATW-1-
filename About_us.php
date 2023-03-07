@@ -324,7 +324,7 @@
                             <a href="#!" class="text-white">Adopta ¡YA! </a>
                         </p>
                         <p>
-                            <a href="blog.html" class="text-white">Blog</a>
+                            <a href="blog.php" class="text-white">Blog</a>
                         </p>
                     </div>
                     <!-- Grid column -->

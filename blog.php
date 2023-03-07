@@ -57,7 +57,7 @@
 
     }
 
-    /*estilos form comentarios y perritos*/
+    /*estilos form comentarios, perritos y encuesta*/
     .form {
       margin: 20px;
     }
@@ -108,6 +108,7 @@
       width: 420px;
       height: 300px;
       object-fit: cover;
+      border-radius: 10px;
     }
 
     .contenedorPerro {
@@ -121,6 +122,22 @@
       padding-top: 10px;
 
     }
+
+    .barra {
+      background-color: #ddd;
+      height: 20px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .barra .progreso {
+      background-color: #4CAF50;
+      height: 100%;
+      border-radius: 10px;
+      text-align: center;
+      color: white;
+    }
   </style>
   <script>
     $(document).ready(function() {
@@ -133,12 +150,34 @@
         $(this).css('color', 'black')
       })
     });
+
     $(document).ready(function() {
       $('#boton2').mouseover(function() {
         $(this).css('background-color', 'black')
         $(this).css('color', '#b2e8f9')
       })
       $('#boton2').mouseout(function() {
+        $(this).css('background-color', '#b2e8f9')
+        $(this).css('color', 'black')
+      })
+    });
+
+    $(document).ready(function() {
+      $('.boton3').mouseover(function() {
+        $(this).css('background-color', 'black')
+        $(this).css('color', '#b2e8f9')
+      })
+      $('.boton3').mouseout(function() {
+        $(this).css('background-color', '#b2e8f9')
+        $(this).css('color', 'black')
+      })
+    });
+    $(document).ready(function() {
+      $('.boton4').mouseover(function() {
+        $(this).css('background-color', 'black')
+        $(this).css('color', '#b2e8f9')
+      })
+      $('.boton4').mouseout(function() {
         $(this).css('background-color', '#b2e8f9')
         $(this).css('color', 'black')
       })
@@ -209,7 +248,7 @@
             <a class="nav-link active" aria-current="page" href="index.html" id="opcion1">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="blog.html" id="opcion2">Blog</a>
+            <a class="nav-link active" href="blog.php" id="opcion2">Blog</a>
           </li>
 
           <li class="nav-item">
@@ -354,23 +393,34 @@
             animales.
           </p>
         </div>
-        <?php
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-          $nombre = $_POST['nombre'];
-          $comentario = $_POST['comentario'];
+
+        <!-- ---------------- COMENTARIOS ------------------- -->
+        <div class="p-5 mx-5 my-5" style="background-color: #E8E8E8;">
+          <?php
+          if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (isset($_POST['nombre'])) {
+              $nombre = $_POST['nombre'];
+            } else {
+              $nombre = '';
+            }
+            if (isset($_POST['comentario'])) {
+              $comentario = $_POST['comentario'];
+            } else {
+              $comentario = '';
+            }
+            $archivo = 'comentarios.txt';
+            $contenido = file_get_contents($archivo);
+            if (!empty($nombre) && !empty($comentario)) {
+              $contenido .= "\n$nombre: $comentario";
+              file_put_contents($archivo, $contenido);
+            }
+          }
           $archivo = 'comentarios.txt';
           $contenido = file_get_contents($archivo);
-          $contenido .= "\n$nombre: $comentario";
-          file_put_contents($archivo, $contenido);
-        }
-        $archivo = 'comentarios.txt';
-        $contenido = file_get_contents($archivo);
-        $comentarios = explode("\n", $contenido);
-        ?>
+          $comentarios = explode("\n", $contenido);
+          ?>
 
-        <div class="p-5 mx-5 my-5" style="background-color: #E8E8E8;">
-          <!-- ---------------- COMENTARIOS ------------------- -->
-          <h4>Ingrese su comentarios:</h4>
+          <h4>Ingrese su comentario:</h4>
           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form" method="POST">
             <label for="nombre">Nombre:</label>
             <input type="text" class="nombre" id="nombre" name="nombre">
@@ -379,33 +429,96 @@
             <center>
               <input type="submit" id="boton2" value="Enviar" class="text-center btn mt-4 fw-semibold " style="background-color:#b2e8f9 ;">
             </center>
-
           </form>
           <hr>
           <h4>Comentarios:</h4>
           <?php
           foreach ($comentarios as $comentario) {
-            echo "<div class=\"comentario\"><strong>$comentario</strong></div>";
+            if (!empty($comentario)) {
+              echo "<div class=\"comentario\"><strong>$comentario</strong></div>";
+            }
           }
           ?>
-        </div>
 
+        </div>
+        <!-- ----------------- GALERÍA ------------------- -->
         <div class="p-5 mx-5 my-5" style="background-color: #E8E8E8;">
-          <!-- ----------------- GALERÍA ------------------- -->
-          <h4 class="text-center">Fotos de perritos graciosas</h4>
+          <h4 class="text-center">Galería de perritos</h4>
+
           <?php
           $data = file_get_contents("https://dog.ceo/api/breeds/image/random");
-
           $resultado = json_decode($data, true);
           if ($resultado['status'] == "success") {
             $imagenUrl = $resultado['message'];
             echo "<div class='contenedorPerro'>";
             echo "<img id='imagen' src='$imagenUrl' class='imagenPerro'>";
-            echo "<button id='cambiar-imagen' class='text-center btn mt-4 fw-semibold' style='background-color:#b2e8f9;' >Cambiar imagen</button>";
+            echo "<button id='cambiar-imagen' class='boton3 text-center btn mt-4 fw-semibold' style='background-color:#b2e8f9;' >Cambiar imagen</button>";
             echo "</div>";
           } else {
             echo "Ha ocurrido un error al obtener la imagen de perro";
           }
+          ?>
+        </div>
+        <!-- ----------------- ENCUESTA ------------------- -->
+        <div class="p-5 mx-5 my-5" style="background-color: #E8E8E8;">
+          <h4>Encuesta</h4>
+          <form method="post" action="" class="form">
+            <p>¿Qué prefieres los perros o los gatos?</p>
+            <input type="radio" name="mascota" value="perro"> Perros<br>
+            <input type="radio" name="mascota" value="gato"> Gatos<br>
+            <center>
+              <input type="submit" name="submit" value="Votar" class="boton4 text-center btn mt-4 fw-semibold " style="background-color:#b2e8f9 ;">
+            </center>
+          </form>
+
+          <?php
+          if (isset($_POST['submit'])) {
+            if (isset($_POST['mascota'])) {
+              $mascota = $_POST['mascota'];
+              $archivo = fopen("votos.txt", "a");
+              fwrite($archivo, $mascota . "\n");
+              fclose($archivo);
+              echo "<center><p>Gracias por votar. Tu selección ha sido registrada.</p></center>";
+            } else {
+              echo "<center><p>Por favor, selecciona una mascota antes de votar.</p></center>";
+            }
+          }
+
+          // Obtener los votos registrados en el archivo de texto
+          $votos = file("votos.txt", FILE_IGNORE_NEW_LINES);
+          $num_perros = 0;
+          $num_gatos = 0;
+          foreach ($votos as $voto) {
+            if ($voto == "perro") {
+              $num_perros++;
+            } elseif ($voto == "gato") {
+              $num_gatos++;
+            }
+          }
+          // Calcular el porcentaje de votos para cada mascota
+          $total_votos = count($votos);
+          if ($total_votos > 0) {
+            $porcentaje_perros = round(($num_perros / $total_votos) * 100, 2);
+            $porcentaje_gatos = round(($num_gatos / $total_votos) * 100, 2);
+          } else {
+            $porcentaje_perros = 0;
+            $porcentaje_gatos = 0;
+          }
+          // Mostrar las estadísticas de la encuesta
+          echo "<h2>Estadísticas de la encuesta</h2>";
+          echo "<p>Total de votos: " . $total_votos . "</p>";
+          echo "<p>Porcentaje de votos para perros: " . $porcentaje_perros . "%</p>";
+          echo "<div class='barra'>";
+          echo "<div class='progreso' style='width: " . $porcentaje_perros . "%;'>";
+          echo $porcentaje_perros . "%";
+          echo "</div>";
+          echo "</div>";
+          echo "<p>Porcentaje de votos para gatos: " . $porcentaje_gatos . "%</p>";
+          echo "<div class='barra'>";
+          echo "<div class='progreso' style='width: " . $porcentaje_gatos . "%;'>";
+          echo $porcentaje_gatos . "%";
+          echo "</div>";
+          echo "</div>";
           ?>
         </div>
       </div>
@@ -487,7 +600,7 @@
               <a href="contact.html" class="text-white">Adopta ¡YA! </a>
             </p>
             <p>
-              <a href="blog.html" class="text-white">Blog</a>
+              <a href="blog.php" class="text-white">Blog</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -577,6 +690,22 @@
         color: "blue",
 
       }, 300);
+    });
+
+    // Obtener el botón y la imagen
+    const botonCambiarImagen = document.getElementById("cambiar-imagen");
+    const imagen = document.getElementById("imagen");
+
+    // Agregar un evento clic al botón
+    botonCambiarImagen.addEventListener("click", function() {
+      // Obtener una nueva imagen de la API
+      fetch("https://dog.ceo/api/breeds/image/random")
+        .then(response => response.json())
+        .then(data => {
+          // Actualizar la imagen en la página
+          imagen.src = data.message;
+        })
+        .catch(error => console.error(error));
     });
   </script>
 </body>
