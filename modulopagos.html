@@ -95,40 +95,9 @@
     </nav>
 
     <form class="formregistro" action="pagos.php" method="post">
-      <h1 style="text-align: center; margin-bottom: 30px ; font-weight: bold;">Modulo de donaciones</h1>
+      <h1 style="text-align: center; margin-bottom: 30px ; font-weight: bold;">Modulo de donaciones.</h1>
       <p style="text-align: center; margin-top: 10px; margin-bottom: 20px">
         Rellene los datos con la informacion solicitada
-<<<<<<< HEAD
-    </p>
-    <div class="tarjetas">
-        <img  class="imgtarjeta" src="imagenes2/Visa_Inc._logo.svg.png" alt="">
-        <img  class="imgtarjeta" src="imagenes2/mastercard.png" alt="">
-        <img  class="imgtarjeta" src="imagenes2/american.png" alt="">
-        <img  class="imgtarjeta" src="imagenes2/dinners.png" alt="">
-        
-    </div>
- 
-        <div class="items">
-          
-        <input class="inputs" placeholder="Nombre" type="text" name="Nombre" id="Nombre"  required>
-        
-        <input class="inputs" placeholder="Apellido" type="text" name="Apellido" id="Apellido" required>
-        <label for="">Tipo de tarjeta</label>
-        <select class="inputs  inpus2" name="tipoTarjeta" id="tipoTarjeta" required>
-            <option value="Visa">Visa</option>
-            <option value="Mastercard">Mastercard</option>
-            <option value="American Express">American Express</option>
-            <option value="Discover">Discover</option>
-            <option value="Interlink">Interlink</option>
-        </select>
-        
-        <input class="inputs"  placeholder="Numero de tarjeta" type="number" name="numTarjeta" id="numTarjeta" required>
-
-        <input class="inputs" placeholder="Fecha de vecimiento (MM/AA)" type="text" name="fechaV" id="fechaV" required>
-        
-        <input class="inputs" placeholder="Codigo de seguridad (CVV)" type="number" name="codigoCVV" id="codigoCVV" required>
-        <input class="inputs" placeholder="Cantidad de donación" type="number" name="donacion" id="donacion" required>
-=======
       </p>
       <div class="tarjetas">
         <img class="imgtarjeta" src="imagenes2/Visa_Inc._logo.svg.png" alt="">
@@ -140,11 +109,11 @@
 
       <div class="items">
 
-        <input class="inputs" placeholder="Nombre" type="text" name="Nombre" id="Nombre">
+        <input class="inputs" placeholder="Nombre" type="text" name="Nombre" id="Nombre" required>
 
-        <input class="inputs" placeholder="Apellido" type="text" name="Apellido" id="Apellido">
+        <input class="inputs" placeholder="Apellido" type="text" name="Apellido" id="Apellido" required>
         <label for="">Tipo de tarjeta</label>
-        <select class="inputs  inpus2" name="tipoTarjeta" id="tipoTarjeta">
+        <select class="inputs  inpus2" name="tipoTarjeta" id="tipoTarjeta" required>
           <option value="Visa">Visa</option>
           <option value="Mastercard">Mastercard</option>
           <option value="American Express">American Express</option>
@@ -152,19 +121,18 @@
           <option value="Interlink">Interlink</option>
         </select>
 
-        <input class="inputs" placeholder="Numero de tarjeta" type="number" name="numTarjeta" id="numTarjeta">
+        <input class="inputs" placeholder="Numero de tarjeta" type="number" name="numTarjeta" id="numTarjeta" required>
 
-        <input class="inputs" placeholder="Fecha de vecimiento (MM/AA)" type="text" name="fechaV" id="fechaV">
+        <input class="inputs" placeholder="Fecha de vecimiento (MM/AA)" type="text" name="fechaV" id="fechaV" required>
 
-        <input class="inputs" placeholder="Codigo de seguridad (CVV)" type="number" name="codigoCVV" id="codigoCVV">
-        <input class="inputs" placeholder="Cantidad de donación" type="number" name="donacion" id="donacion">
->>>>>>> 6ca01d8bc0ddcc0e20679d75124f8f8609fd39b6
+        <input class="inputs" placeholder="Codigo de seguridad (CVV)" type="number" name="codigoCVV" id="codigoCVV" required>
+        <input class="inputs" placeholder="Cantidad de donación" type="number" name="donacion" id="donacion" required>
         <br>
         <label for="">Los pagos se procesarán internacionalmente. Es posible que se apliquen comisiones bancarias
           adicionales.</label>
         <br>
         <br>
-        <button style="font-size:18px;" type="submit" class="btnPage myBtn">Realizar el Pago</button>
+        <button style="font-size:18px;" type="submit" class="btnPage myBtn">Realizar las donaciones</button>
 
       </div>
     </form>
