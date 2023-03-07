@@ -76,6 +76,7 @@ color: white;
 			box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
 			border-radius: 5px;
 			overflow: hidden;
+            margin-bottom: 30px;
 		}
 		th, td {
 			padding: 10px;
@@ -101,6 +102,28 @@ color: white;
         .table-view {
   overflow-x: auto;
 }
+    #contador {
+    
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 0 auto;
+	border-collapse: collapse;
+	width: 20%;
+	max-width: 800px;
+	overflow: hidden;
+    text-align: center;
+  }
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
 	</style>
 </head>
 <body>
@@ -120,10 +143,15 @@ color: white;
                   <li class="nav-item">
                     <a class="nav-link active" href="blog.php" id="opcion2">Blog</a>
                   </li>
+
                 
                   <li class="nav-item">
                     <a class="nav-link active "href="About_us.html" id="opcion3">Sobre nosotros</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link active "href="modulopagos.html" id="opcion4">Donaciones</a>
+                  </li>
+            
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle active" href="#" id="opcion4" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Mascotas
@@ -156,6 +184,7 @@ color: white;
 			<th>Tipo de mascota</th>
 			<th>Razón de la adopción</th>
 		</tr>
+        <img src="imagenes/familypet.jpeg" alt="Pet" width=250" height="200">
 		<?php
 		$archivo = fopen("datos_adopciones.txt", "r") or die("No se pudo abrir el archivo.");
 
@@ -176,9 +205,13 @@ color: white;
 		}
 
 		fclose($archivo);
+        
 		?>
+        <div id="contador"></div>     
         
 	</table>
+
+    
     </div>
 
         <!-- Footer -->
@@ -307,4 +340,18 @@ color: white;
       </div>
     </div>
 </body>
+<script>
+    // Obtener la tabla
+const table = document.querySelector('table');
+
+// Obtener el número de filas en la tabla
+const numRows = table.rows.length - 1; // Restar 1 para excluir la fila de encabezado
+
+// Obtener el elemento del contador
+const contador = document.querySelector('#contador');
+
+// Establecer el valor del contador
+contador.textContent = `Total de personas registradas: ${numRows}`;
+table.insertAdjacentElement('afterend', contador);
+</script>
 </html>
