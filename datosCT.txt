@@ -1,2 +1,3 @@
 Moises,ningunnuevo,21,alejandro@espe.com,1234,Hombre,Venezuela
 Ana,otro gato,22,anamaria@espe.ec.com,Al123,Mujer,Ecuador
+Lesly,me gustan gatos,22,lcgaibor@espe.edu.ec,lesly69,Mujer,Ecuador
