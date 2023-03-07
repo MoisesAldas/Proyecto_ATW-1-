@@ -124,6 +124,15 @@ color: white;
         width: 50%;
     }
 
+    #regresar {
+        margin-top: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto%;
+        background-color: #333;
+        border-radius: 5px;
+    }
 	</style>
 </head>
 <body>
@@ -210,8 +219,7 @@ color: white;
         <div id="contador"></div>     
         
 	</table>
-
-    
+    <button class="btn btn-secondary" onclick="goBack()" id="regresar">Regresar</button>
     </div>
 
         <!-- Footer -->
@@ -288,10 +296,10 @@ color: white;
                       style="width: 60px; background-color: #7c4dff; height: 2px"
                       />
                   <p>
-                    <a href="#" class="text-white" >Home</a>
+                    <a href="index.html" class="text-white" >Home</a>
                   </p>
                   <p>
-                    <a href="#" class="text-white" >Sobre nosotros</a>
+                    <a href="contacto.php" class="text-white" >Sobre nosotros</a>
                   </p>
                   <p>
                     <a href="#" class="text-white" >Adopta ¡YA! </a>
@@ -356,7 +364,9 @@ table.insertAdjacentElement('afterend', contador);
 </script>
 <script>
 
-
+function goBack() {
+  window.history.back();
+}
 
 $(document).ready(function () {
 
