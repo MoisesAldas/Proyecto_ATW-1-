@@ -466,30 +466,26 @@
             <p>¿Qué prefieres los perros o los gatos?</p>
             <input type="radio" name="mascota" value="perro"> Perros<br>
             <input type="radio" name="mascota" value="gato"> Gatos<br>
-            <input type="submit" name="submit" value="Votar" class="boton4 text-center btn mt-4 fw-semibold " style="background-color:#b2e8f9 ;">
+            <center>
+              <input type="submit" name="submit" value="Votar" class="boton4 text-center btn mt-4 fw-semibold " style="background-color:#b2e8f9 ;">
+            </center>
           </form>
 
           <?php
           if (isset($_POST['submit'])) {
-            // Verificar si se ha seleccionado una mascota
             if (isset($_POST['mascota'])) {
-              // Obtener la mascota seleccionada
               $mascota = $_POST['mascota'];
-              // Guardar la selección del usuario en un archivo de texto
               $archivo = fopen("votos.txt", "a");
               fwrite($archivo, $mascota . "\n");
               fclose($archivo);
-              // Mostrar un mensaje de confirmación
-              echo "<p>Gracias por votar. Tu selección ha sido registrada.</p>";
+              echo "<center><p>Gracias por votar. Tu selección ha sido registrada.</p></center>";
             } else {
-              // Mostrar un mensaje de error si no se ha seleccionado una mascota
-              echo "<p>Por favor, selecciona una mascota antes de votar.</p>";
+              echo "<center><p>Por favor, selecciona una mascota antes de votar.</p></center>";
             }
           }
 
           // Obtener los votos registrados en el archivo de texto
           $votos = file("votos.txt", FILE_IGNORE_NEW_LINES);
-          // Contar el número de votos para cada mascota
           $num_perros = 0;
           $num_gatos = 0;
           foreach ($votos as $voto) {
