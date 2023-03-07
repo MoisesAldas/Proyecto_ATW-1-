@@ -153,7 +153,7 @@
     </div>
   </div>
   <!--FORMULARIO-->
-  <form action="guardar_datos.php" id="formulario_validar" method="POST">
+  <form action="contacto.php" id="" method="POST">
     <div class="container" style="padding: 40px; background-color: rgb(229, 234, 235);">
       <form action="" id="formulario_validar">
 
@@ -186,7 +186,7 @@
             </div>
             <div class="form-group">
               <label for="">Contraseña</label>
-              <input type="password" class="form-control mt-1" placeholder="Contraseña" id="contra" />
+              <input type="password" class="form-control mt-1" placeholder="contra" id="contra" name="contra"/>
               <div class="error" id="mensaje3">Ingrese su contraseña</div>
             </div>
 
@@ -195,13 +195,13 @@
                 <label for="">Eliga su sexo:</label>
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input type="radio" name="sexo" id="sexo" class="form-check-input mr-2 " />
+                    <input type="radio" name="sexo" id="sexo" value="Hombre"class="form-check-input mr-2 " />
                     Hombre
                   </label>
                 </div>
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input type="radio" name="sexo" id="sexo" class="form-check-input mr-2 " />
+                    <input type="radio" name="sexo" id="sexo" value="Mujer" class="form-check-input mr-2 " />
                     Mujer
                   </label>
                   <div class="error" id="mensaje">Escoja el sexo</div>
@@ -213,9 +213,9 @@
 
                   <select name="lugar" id="lugar" class="form-control form-select ">
                     <option value="0">Seleccione una opcion</option>
-                    <option value="1">Ecuador</option>
-                    <option value="2">Venezuela</option>
-                    <option value="3">Colombia</option>
+                    <option value="Ecuador">Ecuador</option>
+                    <option value="Venezuela">Venezuela</option>
+                    <option value="Colombia">Colombia</option>
                   </select>
                   <div class="error" id="mensaje">Escoja UN PAIS</div>
                 </div>
@@ -231,7 +231,7 @@
           </div>
 
           <div class="d-grid mt-2 col-sm-4 col-xs-12 mx-auto">
-            <input class="btn btn-primary" type="submit" name="enviar" value="Enviar" formaction="guardar_datos.php">
+            <input class="btn btn-primary" type="submit" name="enviar" value="Enviar" formaction="contacto.php">
             </button>
           </div>
         </div>
@@ -507,3 +507,27 @@
 </body>
 
 </html>
+<?php
+		if($_SERVER["REQUEST_METHOD"] == "POST") {
+			$nombre = $_POST["nombre"];
+            $mensaje = $_POST["mensaje"];
+			$edad = $_POST["edad"];
+            $correo = $_POST["correo"];
+            $contra = str_replace(",", ".", $_POST["contra"]);
+            $sexo = $_POST["sexo"];
+            $lugar = $_POST["lugar"];
+
+            $correo_limpio = str_replace(",", ".", $correo);
+
+			// Abre el archivo en modo "a" (append) para agregar datos al final del archivo
+			$archivo = fopen("datosCT.txt", "a");
+
+			// Escribe los datos en el archivo separados por comas
+			fwrite($archivo, "$nombre,$mensaje,$edad,$correo_limpio,$contra,$sexo,$lugar\n");
+
+			// Cierra el archivo
+			fclose($archivo);
+
+			echo "<p>Los datos se han registrado correctamente.</p>";
+		}
+	?>
