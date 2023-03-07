@@ -152,7 +152,7 @@
                     </ul>
                     <form class="d-flex" role="search">
 
-                        <a href="contact.html"><button type="button" class="btn   fw-semibold myBtn" style="background-color:#b2e8f9 ;border-color: #151515;" id="Contactos">Contacto</button> </a>
+                        <a href="contacto.php"><button type="button" class="btn   fw-semibold myBtn" style="background-color:#b2e8f9 ;border-color: #151515;" id="Contactos">Contacto</button> </a>
                     </form>
                 </div>
 
@@ -185,7 +185,7 @@
             <hr>
             Acuda a los <cite title="Contactos">Contactos para responder dudas e inquietudes</cite>
             <br><br>
-            <a href="contact.html"><button type="button" class="btn fw-semibold" style="background-color:#b2e8f9;">Contacto</button></a>
+            <a href="contacto.php"><button type="button" class="btn fw-semibold" style="background-color:#b2e8f9;">Contacto</button></a>
           </div>
         </div>
       </div>
