@@ -101,6 +101,9 @@
           <li class="nav-item">
             <a class="nav-link active " href="About_us.html" id="opcion3">Sobre nosotros</a>
           </li>
+          <li class="nav-item">
+              <a class="nav-link active " href="modulopagos.html" id="opcion4">Donaciones</a>
+            </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active" href="#" id="opcion4" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
