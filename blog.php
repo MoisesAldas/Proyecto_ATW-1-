@@ -1,17 +1,3 @@
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  $nombre = $_POST['nombre'];
-  $comentario = $_POST['comentario'];
-  $archivo = 'comentarios.txt';
-  $contenido = file_get_contents($archivo);
-  $contenido .= "\n$nombre: $comentario";
-  file_put_contents($archivo, $contenido);
-}
-$archivo = 'comentarios.txt';
-$contenido = file_get_contents($archivo);
-$comentarios = explode("\n", $contenido);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,7 +57,7 @@ $comentarios = explode("\n", $contenido);
 
     }
 
-    /*estilos form comentarios*/
+    /*estilos form comentarios y perritos*/
     .form {
       margin: 20px;
     }
@@ -116,6 +102,24 @@ $comentarios = explode("\n", $contenido);
       display: block;
       margin-bottom: 5px;
       color: #555;
+    }
+
+    .imagenPerro {
+      width: 420px;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .contenedorPerro {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #cambiar-imagen {
+      padding-top: 10px;
+
     }
   </style>
   <script>
