@@ -50,7 +50,7 @@ if (isset($_POST['enviar'])) {
         fclose($archivo);
 
         // Mostramos un mensaje de éxito
-        echo "<p>Los datos se han guardado correctamente.</p>";
+        echo "<p>Los datos se han guardado correctamente, nos contactaremos contigo</p>";
 
     }
 }
@@ -133,7 +133,6 @@ color: white;
 			padding: 20px;
 			margin: 50px auto;
 			max-width: 770px;
-            
 		}
 		label {
 			display: block;
@@ -165,12 +164,12 @@ color: white;
 		input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
 			background-color: #555;
 		}
-        img {
-    max-width: 100%;
-    overflow: hidden;
-    display: block;
+    img {
+    max-width: 80%;
+
     margin: 0 auto;
-    height: auto;
+    display: block;
+
     }
 
 
@@ -222,10 +221,15 @@ color: white;
                   <li class="nav-item">
                     <a class="nav-link active" href="blog.php" id="opcion2">Blog</a>
                   </li>
+
                 
                   <li class="nav-item">
                     <a class="nav-link active "href="About_us.html" id="opcion3">Sobre nosotros</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link active "href="modulopagos.html" id="opcion4">Donaciones</a>
+                  </li>
+            
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle active" href="#" id="opcion4" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Mascotas
@@ -247,36 +251,47 @@ color: white;
 
         </div>
       </nav>
-</div>
-  
-
     <div class="form">
     <h1>Formulario de adopción de mascotas</h1>
 	<form action="formularioadopciones.php" method="POST">
+        <div class="row">
+      <div class="col-md-6">
+        <div class="form-group"
 		<label for="nombre">Nombre completo:</label>
 		<input type="text" name="nombre">
 		<?php if(isset($nombreError)): ?>
 			<label style="color: red;"><?php echo $nombreError; ?></label>
 		<?php endif; ?>
 		<br>
+        </div>
+        <div class="form-group">
 		<label for="email">Correo electrónico:</label>
 		<input type="email" name="email">
 		<?php if(isset($emailError)): ?>
 			<label style="color: red;"><?php echo $emailError; ?></label>
 		<?php endif; ?>
 		<br>
+        </div>
+        <div class="form-group">
 		<label for="telefono">Teléfono:</label>
 		<input type="tel" name="telefono">
 		<?php if(isset($telefonoError)): ?>
 			<label style="color: red;"><?php echo $telefonoError; ?></label>
 		<?php endif; ?>
 		<br>
+        <img src="imagenes/petform.jpeg" alt="Pet" width=300" height="200">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
 		<label for="direccion">Dirección:</label>
 		<input type="text" name="direccion">
 		<?php if(isset($direccionError)): ?>
 			<label style="color: red;"><?php echo $direccionError; ?></label>
 		<?php endif; ?>
 		<br>
+        </div>
+        <div class="form-group">
 		<label for="tipo_mascota">Tipo de mascota:</label>
 		<select name="tipo_mascota">
 			<option value="">--Seleccione--</option>
@@ -288,20 +303,36 @@ color: white;
 			<label style="color: red;"><?php echo $tipoMascotaError; ?></label>
 		<?php endif; ?>
 		<br>
+        <div class="form-group">
 		<label for="razon_adopcion">Razón de la adopción:</label>
 		<textarea name="razon_adopcion"></textarea>
 		<?php if(isset($razonAdopcionError)): ?>
 			<label style="color: red;"><?php echo $razonAdopcionError; ?></label>
 		<?php endif; ?>
 		<br>
+     
         <div style="text-align: center;">
 		<input type="submit" name="enviar" value="Enviar datos">
 		<input type="reset" name="borrar" value="Borrar datos">
 		<input type="submit" name="ver" formaction="ver_datos_adopciones.php" value="Visualizar datos">
-        <img src="imagenes/petform.jpeg" alt="Pet" width=300" height="200">
+        
+    
+    
+
         </div>
-	</form>
+        
+      </div>
+      
     </div>
+    
+  </form>
+  
+</div>
+
+</div>
+</div>
+
+</div>
 
 
         <!-- Footer -->
@@ -430,4 +461,116 @@ color: white;
       </div>
     </div>
 </body>
+<script>
+
+
+$(document).ready(function () {
+
+
+  $("#myTitleM").hover(function () {
+    $(this).addClass("grow");
+
+  },
+    function () {
+      $(this).removeClass("grow");
+    })
+
+
+
+
+  $(".myBtn").hover(
+    function () {
+      $(this).addClass("grow");
+    },
+    function () {
+      $(this).removeClass("grow");
+    }
+  );
+
+
+  $("#myTitle").mouseover(function () {
+
+    $("#myTitle").animate({
+      width: "450px",
+      color: "blue",
+
+    }, 300);
+  });
+
+  $("#opcion1").mouseover(function () {
+    $(this).addClass("negrita");
+  });
+
+  $("#opcion2").mouseover(function () {
+    $(this).addClass("negrita");
+  });
+  $("#opcion3").mouseover(function () {
+    $(this).addClass("negrita");
+
+  });
+
+  $("#opcion4").mouseover(function () {
+    $(this).addClass("negrita");
+
+  });
+
+  $("#opcion5").mouseover(function () {
+    $(this).addClass("negrita");
+
+  });
+
+  $("#opcion1").mouseout(function () {
+    $(this).removeClass("negrita");
+  });
+
+  $("#opcion2").mouseout(function () {
+    $(this).removeClass("negrita");
+  });
+
+  $("#opcion3").mouseout(function () {
+    $(this).removeClass("negrita");
+  });
+
+  $("#opcion4").mouseout(function () {
+    $(this).removeClass("negrita");
+  });
+  $("#opcion5").mouseout(function () {
+    $(this).removeClass("negrita");
+  });
+
+  $("#Contactos").mouseover(function () {
+
+    $(this).css("background-color", "black");
+    $(this).css("color", "white");
+  });
+
+  $("#Contactos").mouseout(function () {
+    $(this).remove(css());
+    ;
+  });
+
+  $("#topBtn").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    return false;
+  });
+
+  $(".contenerdor").hide().fadeIn(2000)
+
+
+  var images = ['imagenes/gallery-original-8.jpg', 'imagenes/gallery-original-1.jpg', 'imagenes/gallery-original-2.jpg'];
+  var i = 0;
+
+  function changeImg() {
+    $("#myImg").attr("src", images[i]);
+    i = (i + 1) % images.length;
+  }
+  setInterval(changeImg, 3000);
+
+  $("#braili").slideDown(3000);
+
+  $(".perro1").hide().mouseover().fadeIn(5000);
+
+});
+
+</script>
 </html>

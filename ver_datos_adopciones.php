@@ -76,6 +76,7 @@ color: white;
 			box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
 			border-radius: 5px;
 			overflow: hidden;
+            margin-bottom: 30px;
 		}
 		th, td {
 			padding: 10px;
@@ -101,6 +102,37 @@ color: white;
         .table-view {
   overflow-x: auto;
 }
+    #contador {
+    
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 0 auto;
+	border-collapse: collapse;
+	width: 20%;
+	max-width: 800px;
+	overflow: hidden;
+    text-align: center;
+  }
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    #regresar {
+        margin-top: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto%;
+        background-color: #333;
+        border-radius: 5px;
+    }
 	</style>
 </head>
 <body>
@@ -120,10 +152,15 @@ color: white;
                   <li class="nav-item">
                     <a class="nav-link active" href="blog.php" id="opcion2">Blog</a>
                   </li>
+
                 
                   <li class="nav-item">
                     <a class="nav-link active "href="About_us.html" id="opcion3">Sobre nosotros</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link active "href="modulopagos.html" id="opcion4">Donaciones</a>
+                  </li>
+            
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle active" href="#" id="opcion4" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Mascotas
@@ -156,6 +193,7 @@ color: white;
 			<th>Tipo de mascota</th>
 			<th>Razón de la adopción</th>
 		</tr>
+        <img src="imagenes/familypet.jpeg" alt="Pet" width=250" height="200">
 		<?php
 		$archivo = fopen("datos_adopciones.txt", "r") or die("No se pudo abrir el archivo.");
 
@@ -176,9 +214,12 @@ color: white;
 		}
 
 		fclose($archivo);
+        
 		?>
+        <div id="contador"></div>     
         
 	</table>
+    <button class="btn btn-secondary" onclick="goBack()" id="regresar">Regresar</button>
     </div>
 
         <!-- Footer -->
@@ -255,10 +296,10 @@ color: white;
                       style="width: 60px; background-color: #7c4dff; height: 2px"
                       />
                   <p>
-                    <a href="#" class="text-white" >Home</a>
+                    <a href="index.html" class="text-white" >Home</a>
                   </p>
                   <p>
-                    <a href="#" class="text-white" >Sobre nosotros</a>
+                    <a href="contacto.php" class="text-white" >Sobre nosotros</a>
                   </p>
                   <p>
                     <a href="#" class="text-white" >Adopta ¡YA! </a>
@@ -307,4 +348,133 @@ color: white;
       </div>
     </div>
 </body>
+<script>
+    // Obtener la tabla
+const table = document.querySelector('table');
+
+// Obtener el número de filas en la tabla
+const numRows = table.rows.length - 1; // Restar 1 para excluir la fila de encabezado
+
+// Obtener el elemento del contador
+const contador = document.querySelector('#contador');
+
+// Establecer el valor del contador
+contador.textContent = `Total de personas registradas: ${numRows}`;
+table.insertAdjacentElement('afterend', contador);
+</script>
+<script>
+
+function goBack() {
+  window.history.back();
+}
+
+$(document).ready(function () {
+
+
+  $("#myTitleM").hover(function () {
+    $(this).addClass("grow");
+
+  },
+    function () {
+      $(this).removeClass("grow");
+    })
+
+
+
+
+  $(".myBtn").hover(
+    function () {
+      $(this).addClass("grow");
+    },
+    function () {
+      $(this).removeClass("grow");
+    }
+  );
+
+
+  $("#myTitle").mouseover(function () {
+
+    $("#myTitle").animate({
+      width: "450px",
+      color: "blue",
+
+    }, 300);
+  });
+
+  $("#opcion1").mouseover(function () {
+    $(this).addClass("negrita");
+  });
+
+  $("#opcion2").mouseover(function () {
+    $(this).addClass("negrita");
+  });
+  $("#opcion3").mouseover(function () {
+    $(this).addClass("negrita");
+
+  });
+
+  $("#opcion4").mouseover(function () {
+    $(this).addClass("negrita");
+
+  });
+
+  $("#opcion5").mouseover(function () {
+    $(this).addClass("negrita");
+
+  });
+
+  $("#opcion1").mouseout(function () {
+    $(this).removeClass("negrita");
+  });
+
+  $("#opcion2").mouseout(function () {
+    $(this).removeClass("negrita");
+  });
+
+  $("#opcion3").mouseout(function () {
+    $(this).removeClass("negrita");
+  });
+
+  $("#opcion4").mouseout(function () {
+    $(this).removeClass("negrita");
+  });
+  $("#opcion5").mouseout(function () {
+    $(this).removeClass("negrita");
+  });
+
+  $("#Contactos").mouseover(function () {
+    <!--Cambiar el fondo de color negro con letra blanca-->
+    $(this).css("background-color", "black");
+    $(this).css("color", "white");
+  });
+
+  $("#Contactos").mouseout(function () {
+    $(this).remove(css());
+    ;
+  });
+
+  $("#topBtn").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    return false;
+  });
+
+  $(".contenerdor").hide().fadeIn(2000)
+
+
+  var images = ['imagenes/gallery-original-8.jpg', 'imagenes/gallery-original-1.jpg', 'imagenes/gallery-original-2.jpg'];
+  var i = 0;
+
+  function changeImg() {
+    $("#myImg").attr("src", images[i]);
+    i = (i + 1) % images.length;
+  }
+  setInterval(changeImg, 3000);
+
+  $("#braili").slideDown(3000);
+
+  $(".perro1").hide().mouseover().fadeIn(5000);
+
+});
+
+</script>
 </html>

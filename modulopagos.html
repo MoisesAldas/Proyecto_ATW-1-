@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,6 +42,9 @@
 
     .dropdown:hover .dropdown-menu {
       display: block;
+    }
+    .error{
+      display: none;
     }
   </style>
 
@@ -95,7 +99,7 @@
     </nav>
 
     <form class="formregistro" action="pagos.php" method="post">
-      <h1 style="text-align: center; margin-bottom: 30px ; font-weight: bold;">Modulo de donaciones</h1>
+      <h1 style="text-align: center; margin-bottom: 30px ; font-weight: bold;">Modulo de donaciones.</h1>
       <p style="text-align: center; margin-top: 10px; margin-bottom: 20px">
         Rellene los datos con la informacion solicitada
       </p>
@@ -109,11 +113,11 @@
 
       <div class="items">
 
-        <input class="inputs" placeholder="Nombre" type="text" name="Nombre" id="Nombre">
+        <input class="inputs" placeholder="Nombre" type="text" name="Nombre" id="Nombre" required>
 
-        <input class="inputs" placeholder="Apellido" type="text" name="Apellido" id="Apellido">
+        <input class="inputs" placeholder="Apellido" type="text" name="Apellido" id="Apellido" required>
         <label for="">Tipo de tarjeta</label>
-        <select class="inputs  inpus2" name="tipoTarjeta" id="tipoTarjeta">
+        <select class="inputs  inpus2" name="tipoTarjeta" id="tipoTarjeta" required>
           <option value="Visa">Visa</option>
           <option value="Mastercard">Mastercard</option>
           <option value="American Express">American Express</option>
@@ -121,18 +125,18 @@
           <option value="Interlink">Interlink</option>
         </select>
 
-        <input class="inputs" placeholder="Numero de tarjeta" type="number" name="numTarjeta" id="numTarjeta">
+        <input class="inputs" placeholder="Numero de tarjeta" type="text" name="numTarjeta" id="numTarjeta" required> 
+        
+        <input class="inputs" placeholder="Fecha de vecimiento (MM/AA)" type="text" name="fechaV" id="fechaV" required>
 
-        <input class="inputs" placeholder="Fecha de vecimiento (MM/AA)" type="text" name="fechaV" id="fechaV">
-
-        <input class="inputs" placeholder="Codigo de seguridad (CVV)" type="number" name="codigoCVV" id="codigoCVV">
-        <input class="inputs" placeholder="Cantidad de donación" type="number" name="donacion" id="donacion">
+        <input class="inputs" placeholder="Codigo de seguridad (CVV)" type="text" name="codigoCVV" id="codigoCVV" required>
+        <input class="inputs" placeholder="Cantidad de donación ($$)" type="text" name="donacion" id="donacion" required>
         <br>
         <label for="">Los pagos se procesarán internacionalmente. Es posible que se apliquen comisiones bancarias
           adicionales.</label>
         <br>
         <br>
-        <button style="font-size:18px;" type="submit" class="btnPage myBtn">Realizar el Pago</button>
+        <button style="font-size:18px;" type="submit" class="btnPage myBtn">Realizar las donaciones</button>
 
       </div>
     </form>
@@ -247,13 +251,112 @@
 
     </div>
   </div>
+  
 
   <script>
-
-
-
+    
     $(document).ready(function () {
 
+      //poner un espacio cuando se ingresan 4 numeros luego otro espacio al numero 8 luego otro espacio al 12 en el campo de tarjeta de credito
+      $("#numTarjeta").keyup(function () {
+        var value = $(this).val();
+        value = value.replace(/\s/g, "");
+        value = value.replace(/(\d{4})/g, "$1 ");
+        $(this).val(value);
+      });
+
+      //validar que solo se ingresen numeros en el campo con id:numTarjeta
+      $("#numTarjeta").keypress(function (e) {
+        var key = e.keyCode || e.which;
+        if (key == 8 || key == 9 || key == 13 || key == 46 || key == 37 || key == 39) {
+          return true;
+        } else if (key < 48 || key > 57) {
+          return false;
+        } else if ($(this).val().length == 19) {
+          return false;
+        } else {
+          return true;
+        }
+      });
+      $("#codigoCVV").keypress(function (e) {
+        var key = e.keyCode || e.which;
+        if (key == 8 || key == 9 || key == 13 || key == 46 || key == 37 || key == 39) {
+          return true;
+        } else if (key < 48 || key > 57) {
+          return false;
+        } else if ($(this).val().length == 19) {
+          return false;
+        } else {
+          return true;
+        }
+      });
+      $("#donacion").keypress(function (e) {
+        var key = e.keyCode || e.which;
+        if (key == 8 || key == 9 || key == 13 || key == 46 || key == 37 || key == 39) {
+          return true;
+        } else if (key < 48 || key > 57) {
+          return false;
+        } else if ($(this).val().length == 19) {
+          return false;
+        } else {
+          return true;
+        }
+      });
+      // validar que solo se ingresen 19 caracteres en el campo con id:numTarjeta
+      $("#numTarjeta").keyup(function () {
+        if ($(this).val().length > 19) {
+          $(this).val($(this).val().substring(0, 19));
+        }
+      });
+      // validar que solo se ingresen letras y no numeros en el campo con id: Nombre y con id:Apellido
+      $("#Nombre").keypress(function (event) {
+        var key = event.keyCode || event.which;
+  var keychar = String.fromCharCode(key);
+  var regex = /^[a-zA-Z]*$/;
+  
+  if (!regex.test(keychar)) {
+    event.preventDefault();
+    return false;
+  }
+      });
+      $("#Apellido").keypress(function (event) {
+        var key = event.keyCode || event.which;
+  var keychar = String.fromCharCode(key);
+  var regex = /^[a-zA-Z]*$/;
+  
+  if (!regex.test(keychar)) {
+    event.preventDefault();
+    return false;
+  }
+      });
+      //validar que el campo con id:fechaV se ingresen los datos de esta manera 07/02 ccomo en las fechas de vencimiento de las tarjetas de credito
+      $("#fechaV").keyup(function () {
+    var input = document.getElementById("fechaV").value;
+  var regex = /^([0-2][0-9]|[3][0-1])\/([0][1-9]|[1][0-2])$/;
+  var isValid = regex.test(input);
+  
+  if (isValid) {
+    document.getElementById("fechaV").style.color = "black";
+  } else {
+    document.getElementById("fechaV").style.color = "red";
+  }
+      });
+//validar que el campo con id codigoCVV solo acepte 3 caracteres
+      $("#codigoCVV").keyup(function () {
+        if ($(this).val().length > 3) {
+          $(this).val($(this).val().substring(0, 3));
+        }
+      });
+
+    
+
+ 
+   
+   
+
+      
+     
+   
 
       $("#myTitleM").hover(function () {
         $(this).addClass("grow");
@@ -359,6 +462,9 @@
       $(".perro1").hide().mouseover().fadeIn(5000);
 
     });
+
+ 
+
 
   </script>
 
