@@ -108,6 +108,7 @@
       width: 420px;
       height: 300px;
       object-fit: cover;
+      border-radius: 10px;
     }
 
     .contenedorPerro {
@@ -133,12 +134,24 @@
         $(this).css('color', 'black')
       })
     });
+
     $(document).ready(function() {
       $('#boton2').mouseover(function() {
         $(this).css('background-color', 'black')
         $(this).css('color', '#b2e8f9')
       })
       $('#boton2').mouseout(function() {
+        $(this).css('background-color', '#b2e8f9')
+        $(this).css('color', 'black')
+      })
+    });
+
+    $(document).ready(function() {
+      $('.boton3').mouseover(function() {
+        $(this).css('background-color', 'black')
+        $(this).css('color', '#b2e8f9')
+      })
+      $('.boton3').mouseout(function() {
         $(this).css('background-color', '#b2e8f9')
         $(this).css('color', 'black')
       })
@@ -354,22 +367,23 @@
             animales.
           </p>
         </div>
-        <?php
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-          $nombre = $_POST['nombre'];
-          $comentario = $_POST['comentario'];
-          $archivo = 'comentarios.txt';
-          $contenido = file_get_contents($archivo);
-          $contenido .= "\n$nombre: $comentario";
-          file_put_contents($archivo, $contenido);
-        }
-        $archivo = 'comentarios.txt';
-        $contenido = file_get_contents($archivo);
-        $comentarios = explode("\n", $contenido);
-        ?>
 
+        <!-- ---------------- COMENTARIOS ------------------- -->
         <div class="p-5 mx-5 my-5" style="background-color: #E8E8E8;">
-          <!-- ---------------- COMENTARIOS ------------------- -->
+          <?php
+          if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $nombre = $_POST['nombre'];
+            $comentario = $_POST['comentario'];
+            $archivo = 'comentariosBlog.txt';
+            $contenido = file_get_contents($archivo);
+            $contenido .= "\n$nombre: $comentario";
+            file_put_contents($archivo, $contenido);
+          }
+          $archivo = 'comentariosBlog.txt';
+          $contenido = file_get_contents($archivo);
+          $comentarios = explode("\n", $contenido);
+          ?>
+
           <h4>Ingrese su comentarios:</h4>
           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form" method="POST">
             <label for="nombre">Nombre:</label>
@@ -379,7 +393,6 @@
             <center>
               <input type="submit" id="boton2" value="Enviar" class="text-center btn mt-4 fw-semibold " style="background-color:#b2e8f9 ;">
             </center>
-
           </form>
           <hr>
           <h4>Comentarios:</h4>
@@ -389,19 +402,18 @@
           }
           ?>
         </div>
-
+        <!-- ----------------- GALERÍA ------------------- -->
         <div class="p-5 mx-5 my-5" style="background-color: #E8E8E8;">
-          <!-- ----------------- GALERÍA ------------------- -->
-          <h4 class="text-center">Fotos de perritos graciosas</h4>
+          <h4 class="text-center">Galería de perritos</h4>
+
           <?php
           $data = file_get_contents("https://dog.ceo/api/breeds/image/random");
-
           $resultado = json_decode($data, true);
           if ($resultado['status'] == "success") {
             $imagenUrl = $resultado['message'];
             echo "<div class='contenedorPerro'>";
             echo "<img id='imagen' src='$imagenUrl' class='imagenPerro'>";
-            echo "<button id='cambiar-imagen' class='text-center btn mt-4 fw-semibold' style='background-color:#b2e8f9;' >Cambiar imagen</button>";
+            echo "<button id='cambiar-imagen' class='boton3 text-center btn mt-4 fw-semibold' style='background-color:#b2e8f9;' >Cambiar imagen</button>";
             echo "</div>";
           } else {
             echo "Ha ocurrido un error al obtener la imagen de perro";
@@ -487,7 +499,7 @@
               <a href="contact.html" class="text-white">Adopta ¡YA! </a>
             </p>
             <p>
-              <a href="blog.html" class="text-white">Blog</a>
+              <a href="blog.php" class="text-white">Blog</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -577,6 +589,22 @@
         color: "blue",
 
       }, 300);
+    });
+    
+    // Obtener el botón y la imagen
+    const botonCambiarImagen = document.getElementById("cambiar-imagen");
+    const imagen = document.getElementById("imagen");
+
+    // Agregar un evento clic al botón
+    botonCambiarImagen.addEventListener("click", function() {
+      // Obtener una nueva imagen de la API
+      fetch("https://dog.ceo/api/breeds/image/random")
+        .then(response => response.json())
+        .then(data => {
+          // Actualizar la imagen en la página
+          imagen.src = data.message;
+        })
+        .catch(error => console.error(error));
     });
   </script>
 </body>
