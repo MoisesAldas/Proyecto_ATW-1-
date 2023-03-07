@@ -374,17 +374,17 @@
           if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $nombre = $_POST['nombre'];
             $comentario = $_POST['comentario'];
-            $archivo = 'comentariosBlog.txt';
+            $archivo = 'comentarios.txt';
             $contenido = file_get_contents($archivo);
             $contenido .= "\n$nombre: $comentario";
             file_put_contents($archivo, $contenido);
           }
-          $archivo = 'comentariosBlog.txt';
+          $archivo = 'comentarios.txt';
           $contenido = file_get_contents($archivo);
           $comentarios = explode("\n", $contenido);
           ?>
 
-          <h4>Ingrese su comentarios:</h4>
+          <h4>Ingrese su comentario:</h4>
           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form" method="POST">
             <label for="nombre">Nombre:</label>
             <input type="text" class="nombre" id="nombre" name="nombre">
